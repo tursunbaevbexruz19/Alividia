@@ -1,0 +1,970 @@
+<!DOCTYPE html>
+<html lang="uz">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>ALIVIDA ORGANIC — Tabiiy Salomatlik | 100% Organik | Bepul Konsultatsiya</title>
+    <meta name="description"
+        content="ALIVIDA ORGANIC — Turkiyada ishlab chiqarilgan 100% tabiiy organik mahsulotlar. Bepul konsultatsiya oling va o'zingizga mos dori tanlang. 5000+ mamnun mijoz.">
+    <meta name="theme-color" content="#16a34a">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta property="og:title" content="ALIVIDA ORGANIC — Tabiiy Salomatlik">
+    <meta property="og:description" content="100% organik mahsulotlar. Bepul konsultatsiya oling!">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="logo.jpg">
+    <link rel="icon" type="image/svg+xml" href="logo.svg">
+    <link rel="apple-touch-icon" href="logo.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <link rel="stylesheet" href="styles.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "ALIVIDA ORGANIC",
+        "description": "Turkiyada ishlab chiqarilgan 100% tabiiy organik mahsulotlar",
+        "url": "https://alivida.org",
+        "logo": "logo.jpg",
+        "contactPoint": { "@type": "ContactPoint", "contactType": "customer service", "availableLanguage": ["uz", "ru"] },
+        "sameAs": ["https://www.instagram.com/abihayat_turkey", "https://www.instagram.com/alivida.organic", "https://t.me/abihayat_turkey"]
+    }
+    </script>
+</head>
+
+<body>
+    <!-- PRELOADER -->
+    <div class="preloader" id="preloader" aria-hidden="true">
+        <div class="preloader-inner">
+            <div class="preloader-ring"></div>
+            <div class="preloader-brand">
+                <img src="logo.jpg" alt="ALIVIDA" width="40" height="40">
+                <span>ALIVIDA</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- SCROLL PROGRESS -->
+    <div class="scroll-progress" id="scroll-progress" aria-hidden="true"></div>
+
+    <!-- TOAST NOTIFICATION -->
+    <div class="toast" id="toast" role="alert" aria-live="polite">
+        <div class="toast-icon" id="toast-icon">✓</div>
+        <div class="toast-text" id="toast-text"></div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar" role="navigation" aria-label="Asosiy navigatsiya">
+        <div class="nav-container">
+            <a href="#hero" class="nav-logo" aria-label="Bosh sahifa">
+                <img src="logo.jpg" alt="ALIVIDA" class="nav-logo-img" width="40" height="40">
+                <div class="nav-logo-text">
+                    <span class="nav-logo-name">ALIVIDA</span>
+                    <span class="nav-logo-sub">ORGANIC</span>
+                </div>
+            </a>
+            <div class="nav-links" id="nav-links" role="menu">
+                <a href="#products" class="nav-link" data-section="products" role="menuitem">Mahsulotlar</a>
+                <a href="#about" class="nav-link" data-section="about" role="menuitem">Biz haqimizda</a>
+                <a href="#reviews" class="nav-link" data-section="reviews" role="menuitem">Natijalar</a>
+                <a href="#faq" class="nav-link" data-section="faq" role="menuitem">FAQ</a>
+                <a href="#order" class="nav-link nav-cta" role="menuitem">Bepul konsultatsiya</a>
+            </div>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Menyuni ochish" aria-expanded="false">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ═════ HERO ═════ -->
+    <section class="hero" id="hero">
+        <div class="hero-bg" aria-hidden="true">
+            <div class="hero-orb orb-1"></div>
+            <div class="hero-orb orb-2"></div>
+            <div class="hero-orb orb-3"></div>
+        </div>
+        <div class="hero-content">
+            <div class="hero-logo">
+                <img src="logo.jpg" alt="ALIVIDA ORGANIC" class="hero-logo-img" width="90" height="90">
+            </div>
+            <div class="hero-badge">
+                <span class="badge-dot"></span> GMP sertifikatlangan · Turkiya sifati · <span id="live-visitors"
+                    style="color:var(--g600)">47 kishi</span> hozir ko'rmoqda
+            </div>
+            <h1 class="hero-title">
+                <span class="tl">O'zingizga mos</span>
+                <span class="tl tl-green">Tabiiy <span class="typing-text">Salomatlik</span></span>
+            </h1>
+            <p class="hero-desc">
+                <strong>Bepul konsultatsiya oling</strong> — mutaxassisimiz sizga mos mahsulotni tanlashda yordam
+                beradi. <strong>5000+</strong> mijoz allaqachon salomatligini mustahkamladi.
+            </p>
+            <div class="hero-cta">
+                <a href="#order" class="btn btn-primary btn-lg pulse-glow" id="hero-cta-main">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M22 16.92v3a2 2 0 01-2.18 2 20 20 0 01-8.63-3.07 19.5 19.5 0 01-6-6 20 20 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 13 13 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 13 13 0 002.81.7A2 2 0 0122 16.92z" />
+                    </svg>
+                    Bepul konsultatsiya oling
+                </a>
+                <a href="#products" class="btn btn-outline btn-lg">Mahsulotlarni ko'ring</a>
+            </div>
+            <div class="hero-stats">
+                <div class="hs"><span class="hs-n"><span data-count="5000">0</span>+</span><span class="hs-l">Mamnun
+                        mijoz</span></div>
+                <div class="hs-div"></div>
+                <div class="hs"><span class="hs-n"><span data-count="98">0</span>%</span><span class="hs-l">Qayta
+                        buyurtma</span></div>
+                <div class="hs-div"></div>
+                <div class="hs"><span class="hs-n"><span data-count="100">0</span>%</span><span class="hs-l">Organik
+                        tarkib</span></div>
+            </div>
+        </div>
+        <div class="scroll-hint" aria-hidden="true">
+            <div class="scroll-mouse">
+                <div class="scroll-dot"></div>
+            </div>
+            <span>Pastga aylantiring</span>
+        </div>
+    </section>
+
+    <!-- ═════ TRUST BAR ═════ -->
+    <div class="trust-bar" aria-hidden="true">
+        <div class="marquee">
+            <div class="marquee-track">
+                <span>GMP Sertifikatlangan</span><span>100% Organik Tarkib</span><span>Turkiya Sifati</span>
+                <span>Bepul Konsultatsiya</span><span>Tezkor Yetkazish</span><span>5000+ Mamnun Mijoz</span>
+                <span>Klinik Tasdiqlangan</span><span>24/7 Qo'llab-quvvatlash</span>
+                <span>GMP Sertifikatlangan</span><span>100% Organik Tarkib</span><span>Turkiya Sifati</span>
+                <span>Bepul Konsultatsiya</span><span>Tezkor Yetkazish</span><span>5000+ Mamnun Mijoz</span>
+                <span>Klinik Tasdiqlangan</span><span>24/7 Qo'llab-quvvatlash</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═════ PRODUCTS ═════ -->
+    <section class="section" id="products">
+        <div class="container">
+            <div class="section-head">
+                <span class="tag">Mahsulotlar</span>
+                <h2>O'zingizga Mos Mahsulot Tanlang</h2>
+                <p>Har bir mahsulot muayyan muammoni hal qiladi. Qaysi biri sizga kerak?</p>
+            </div>
+            <div class="products-grid">
+                <!-- ABIHAYAT -->
+                <div class="product-card" id="card-abihayat">
+                    <div class="card-badge badge-featured"><svg width="12" height="12" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <polygon
+                                points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                        </svg> Bestseller</div>
+                    <div class="card-visual">
+                        <div class="card-visual-glow"></div>
+                        <img src="AbiHayat.jpg" alt="ABIHAYAT DAMLAMASI" class="card-product-img" loading="lazy"
+                            width="280" height="280">
+                    </div>
+                    <div class="card-body">
+                        <h3>ABIHAYAT DAMLAMASI</h3>
+                        <div class="card-sub">Tabiiy shifobaxsh damchilar · 30ml</div>
+                        <ul class="card-list">
+                            <li><span class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                        stroke="var(--g600)" stroke-width="2.5">
+                                        <polyline points="20 6 9 17 4 12" />
+                                    </svg></span> Immunitetni kuchli mustahkamlaydi</li>
+                            <li><span class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                        stroke="var(--g600)" stroke-width="2.5">
+                                        <polyline points="20 6 9 17 4 12" />
+                                    </svg></span> Jigar va oshqozonni tozalaydi</li>
+                            <li><span class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                        stroke="var(--g600)" stroke-width="2.5">
+                                        <polyline points="20 6 9 17 4 12" />
+                                    </svg></span> Toksinlardan himoya qiladi</li>
+                        </ul>
+                        <div class="card-actions">
+                            <a href="#order" class="btn btn-primary btn-sm">Buyurtma berish</a>
+                            <button class="btn btn-outline btn-sm" onclick="openModal('abihayat')">Batafsil →</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- ALIVIDA PLUS -->
+                <div class="product-card" id="card-alivida">
+                    <div class="card-badge badge-featured"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2">
+                            <polyline points="13 2 3 14 12 14 11 22 21 10 12 10 13 2" />
+                        </svg> Tavsiya etiladi</div>
+                    <div class="card-visual">
+                        <div class="card-visual-glow"></div>
+                        <img src="alividia_plus.jpg" alt="ALIVIDA PLUS" class="card-product-img" loading="lazy"
+                            width="280" height="280">
+                    </div>
+                    <div class="card-body">
+                        <h3>ALIVIDA PLUS</h3>
+                        <div class="card-sub">Energiya va tozalanish · 60 kapsul</div>
+                        <ul class="card-list">
+                            <li><span class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                        stroke="var(--g600)" stroke-width="2.5">
+                                        <polyline points="20 6 9 17 4 12" />
+                                    </svg></span> Metabolizmni tezlashtiradi</li>
+                            <li><span class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                        stroke="var(--g600)" stroke-width="2.5">
+                                        <polyline points="20 6 9 17 4 12" />
+                                    </svg></span> Organizmni chuqur tozalaydi</li>
+                            <li><span class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                        stroke="var(--g600)" stroke-width="2.5">
+                                        <polyline points="20 6 9 17 4 12" />
+                                    </svg></span> Energiya va kuch beradi</li>
+                        </ul>
+                        <div class="card-actions">
+                            <a href="#order" class="btn btn-primary btn-sm">Buyurtma berish</a>
+                            <button class="btn btn-outline btn-sm" onclick="openModal('alivida')">Batafsil →</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- TRIOAKTIV -->
+                <div class="product-card" id="card-trioaktiv">
+                    <div class="card-badge badge-gold"><svg width="12" height="12" viewBox="0 0 24 24"
+                            fill="currentColor">
+                            <path
+                                d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z" />
+                        </svg> Yangi</div>
+                    <div class="card-visual">
+                        <div class="card-visual-glow"></div>
+                        <img src="alividia_organic.jpg" alt="TRIOAKTIV" class="card-product-img" loading="lazy"
+                            width="280" height="280">
+                    </div>
+                    <div class="card-body">
+                        <h3>TRIOAKTIV</h3>
+                        <div class="card-sub">3X kuchli formula · 90 kapsul</div>
+                        <ul class="card-list">
+                            <li><span class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                        stroke="var(--g600)" stroke-width="2.5">
+                                        <polyline points="20 6 9 17 4 12" />
+                                    </svg></span> Umumiy salomatlikni yaxshilaydi</li>
+                            <li><span class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                        stroke="var(--g600)" stroke-width="2.5">
+                                        <polyline points="20 6 9 17 4 12" />
+                                    </svg></span> Vitamin yetishmovchiligini to'ldiradi</li>
+                            <li><span class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                        stroke="var(--g600)" stroke-width="2.5">
+                                        <polyline points="20 6 9 17 4 12" />
+                                    </svg></span> Xotira va diqqatni oshiradi</li>
+                        </ul>
+                        <div class="card-actions">
+                            <a href="#order" class="btn btn-primary btn-sm">Buyurtma berish</a>
+                            <button class="btn btn-outline btn-sm" onclick="openModal('trioaktiv')">Batafsil →</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="mid-cta">
+                <div class="mid-cta-inner">
+                    <div>
+                        <h3>Qaysi mahsulot sizga mos?</h3>
+                        <p>Mutaxassisimiz <strong>bepul konsultatsiya</strong> beradi — o'zingizga mos dorini tanlang
+                        </p>
+                    </div>
+                    <a href="#order" class="btn btn-primary">Bepul maslahat olish →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═════ ABOUT ═════ -->
+    <section class="section" id="about">
+        <div class="container">
+            <div class="about-layout">
+                <div class="about-text">
+                    <span class="tag">Biz haqimizda</span>
+                    <h2>Nima uchun minglab odam ALIVIDA tanlaydi?</h2>
+                    <p><strong>5000+</strong> mijoz allaqachon salomatligini mustahkamladi. Biz
+                        <strong>Turkiyaning</strong> eng yaxshi laboratoriyalarida tabiiy organik mahsulotlar ishlab
+                        chiqaramiz. Har bir mahsulot qat'iy <strong>GMP standartlari</strong> asosida yaratiladi.
+                    </p>
+                    <div class="feat-grid">
+                        <div class="feat">
+                            <div class="feat-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="var(--g600)" stroke-width="2">
+                                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                                </svg></div>
+                            <div>
+                                <h4>GMP Sertifikat</h4>
+                                <p>Xalqaro sifat standartlari</p>
+                            </div>
+                        </div>
+                        <div class="feat">
+                            <div class="feat-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="var(--g600)" stroke-width="2">
+                                    <path d="M17 8C8 10 5.9 16.17 3.82 21.34l1.89.66L7 18l3-3 2-2 4-4" />
+                                    <path d="M20.5 3.5A9 9 0 0 0 3.5 20.5" />
+                                </svg></div>
+                            <div>
+                                <h4>100% Organik</h4>
+                                <p>Kimyoviy qo'shimchalarsiz</p>
+                            </div>
+                        </div>
+                        <div class="feat">
+                            <div class="feat-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="var(--g600)" stroke-width="2">
+                                    <path d="M9 2v6l-2 8h10l-2-8V2" />
+                                    <path d="M3 18h18" />
+                                    <path d="M7 22h10" />
+                                </svg></div>
+                            <div>
+                                <h4>Ilmiy Asos</h4>
+                                <p>Klinik tadqiqotlar bilan tasdiqlangan</p>
+                            </div>
+                        </div>
+                        <div class="feat">
+                            <div class="feat-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                    stroke="var(--g600)" stroke-width="2">
+                                    <circle cx="12" cy="12" r="10" />
+                                    <path d="M2 12h20" />
+                                    <path
+                                        d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+                                </svg></div>
+                            <div>
+                                <h4>Turkiya Sifati</h4>
+                                <p>Eng yaxshi laboratoriyalar</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about-stats">
+                    <div class="stat-card">
+                        <div class="sc-num"><span data-count="5000">0</span>+</div>
+                        <div class="sc-txt">Mamnun mijoz</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="sc-num"><span data-count="98">0</span>%</div>
+                        <div class="sc-txt">Qayta buyurtma</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="sc-num"><span data-count="3">0</span></div>
+                        <div class="sc-txt">Mahsulot turi</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="sc-num"><span data-count="4">0</span>.9 / 5</div>
+                        <div class="sc-txt">O'rtacha baho</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═════ BIG CTA ═════ -->
+    <section class="big-cta">
+        <div class="container">
+            <div class="big-cta-card">
+                <div class="big-cta-bg"></div>
+                <h2>Bepul Konsultatsiya Oling</h2>
+                <p>Telefon raqamingizni qoldiring — <strong>15 daqiqa ichida</strong> mutaxassisimiz qo'ng'iroq qiladi
+                </p>
+                <div class="big-cta-form">
+                    <input type="tel" class="cta-input" id="cta-phone" placeholder="+998 __ ___ __ __"
+                        aria-label="Telefon raqam">
+                    <button class="btn btn-primary" onclick="quickCall()" id="cta-btn">Qo'ng'iroq qiling →</button>
+                </div>
+                <small class="big-cta-note"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                        stroke="currentColor" stroke-width="2" style="vertical-align:-1px;margin-right:4px">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                    </svg>Ma'lumotlaringiz himoyalangan · Bepul va majburiyatsiz</small>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═════ PROCESS ═════ -->
+    <section class="section" id="process">
+        <div class="container">
+            <div class="section-head">
+                <span class="tag">Buyurtma jarayoni</span>
+                <h2>Qanday Ishlaydi?</h2>
+                <p>4 ta oson qadam — 15 daqiqada natijaga yo'l oching</p>
+            </div>
+            <div class="steps-row">
+                <div class="step-card">
+                    <div class="step-n">01</div>
+                    <div class="step-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+                            stroke="var(--g600)" stroke-width="2">
+                            <path
+                                d="M22 16.92v3a2 2 0 01-2.18 2 20 20 0 01-8.63-3.07 19.5 19.5 0 01-6-6 20 20 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 13 13 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 13 13 0 002.81.7A2 2 0 0122 16.92z" />
+                        </svg></div>
+                    <h4>So'rov qoldiring</h4>
+                    <p>Formani to'ldiring yoki qo'ng'iroq qiling — 1 daqiqa!</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-n">02</div>
+                    <div class="step-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+                            stroke="var(--g600)" stroke-width="2">
+                            <path
+                                d="M4.8 2.3A.3.3 0 105 2H4a2 2 0 00-2 2v5a6 6 0 006 6v0a6 6 0 006-6V4a2 2 0 00-2-2h-1a.2.2 0 10.3.3" />
+                            <path d="M8 15v1a6 6 0 006 6v0a6 6 0 006-6v-4" />
+                            <circle cx="20" cy="10" r="2" />
+                        </svg></div>
+                    <h4>Bepul Konsultatsiya</h4>
+                    <p>Mutaxassis sizga mos mahsulotni bepul tanlashda yordam beradi</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-n">03</div>
+                    <div class="step-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+                            stroke="var(--g600)" stroke-width="2">
+                            <rect x="1" y="3" width="15" height="13" />
+                            <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+                            <circle cx="5.5" cy="18.5" r="2.5" />
+                            <circle cx="18.5" cy="18.5" r="2.5" />
+                        </svg></div>
+                    <h4>Tezkor Yetkazish</h4>
+                    <p>O'zbekiston bo'ylab 2-5 kun ichida eshigingizgacha</p>
+                </div>
+                <div class="step-card">
+                    <div class="step-n">04</div>
+                    <div class="step-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+                            stroke="var(--g600)" stroke-width="2">
+                            <polyline points="22 12 18 12 15 21 9 3 6 12 2 12" />
+                        </svg></div>
+                    <h4>Natijani His Qiling</h4>
+                    <p>2-4 haftada birinchi natijalar — siz ham qo'shilingiz!</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═════ VIDEO REVIEWS ═════ -->
+    <section class="section section-alt" id="reviews">
+        <div class="container">
+            <div class="section-head">
+                <span class="tag">Haqiqiy natijalar</span>
+                <h2>Mijozlarimiz Nima Deydi?</h2>
+                <p>Haqiqiy odamlar, haqiqiy natijalar — videolarni ko'ring</p>
+            </div>
+            <div class="video-swiper-wrap">
+                <div class="swiper video-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="video-card">
+                                <div class="video-card-inner">
+                                    <video src="otziv1.MP4" muted loop playsinline preload="metadata"></video>
+                                    <div class="video-overlay">
+                                        <div class="play-btn-circle"><svg width="20" height="20" viewBox="0 0 24 24"
+                                                fill="currentColor">
+                                                <polygon points="5 3 19 12 5 21" />
+                                            </svg></div>
+                                        <span class="video-label">Videoni ko'rish</span>
+                                    </div>
+                                </div>
+                                <div class="video-meta"><span class="video-meta-item">Mijoz sharhi</span><span
+                                        class="video-meta-item">Toshkent</span></div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="video-card">
+                                <div class="video-card-inner">
+                                    <video src="otziv2.MP4" muted loop playsinline preload="metadata"></video>
+                                    <div class="video-overlay">
+                                        <div class="play-btn-circle"><svg width="20" height="20" viewBox="0 0 24 24"
+                                                fill="currentColor">
+                                                <polygon points="5 3 19 12 5 21" />
+                                            </svg></div>
+                                        <span class="video-label">Videoni ko'rish</span>
+                                    </div>
+                                </div>
+                                <div class="video-meta"><span class="video-meta-item">Mijoz sharhi</span><span
+                                        class="video-meta-item">Samarqand</span></div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="video-card">
+                                <div class="video-card-inner">
+                                    <video src="otziv3.mp4" muted loop playsinline preload="metadata"></video>
+                                    <div class="video-overlay">
+                                        <div class="play-btn-circle"><svg width="20" height="20" viewBox="0 0 24 24"
+                                                fill="currentColor">
+                                                <polygon points="5 3 19 12 5 21" />
+                                            </svg></div>
+                                        <span class="video-label">Videoni ko'rish</span>
+                                    </div>
+                                </div>
+                                <div class="video-meta"><span class="video-meta-item">⭐ Mijoz sharhi</span><span
+                                        class="video-meta-item">Buxoro</span></div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="video-card">
+                                <div class="video-card-inner">
+                                    <video src="alividia_plus.mp4" muted loop playsinline preload="metadata"></video>
+                                    <div class="video-overlay">
+                                        <div class="play-btn-circle"><svg width="20" height="20" viewBox="0 0 24 24"
+                                                fill="currentColor">
+                                                <polygon points="5 3 19 12 5 21" />
+                                            </svg></div>
+                                        <span class="video-label">Videoni ko'rish</span>
+                                    </div>
+                                </div>
+                                <div class="video-meta"><span class="video-meta-item">ALIVIDA PLUS</span><span
+                                        class="video-meta-item">Namangan</span></div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="video-card">
+                                <div class="video-card-inner">
+                                    <video src="olividaplusotziv.mp4" muted loop playsinline preload="metadata"></video>
+                                    <div class="video-overlay">
+                                        <div class="play-btn-circle"><svg width="20" height="20" viewBox="0 0 24 24"
+                                                fill="currentColor">
+                                                <polygon points="5 3 19 12 5 21" />
+                                            </svg></div>
+                                        <span class="video-label">Videoni ko'rish</span>
+                                    </div>
+                                </div>
+                                <div class="video-meta"><span class="video-meta-item">⭐ Mijoz sharhi</span><span
+                                        class="video-meta-item">Farg'ona</span></div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="video-card">
+                                <div class="video-card-inner">
+                                    <video src="otzivalividiaplus.mp4" muted loop playsinline
+                                        preload="metadata"></video>
+                                    <div class="video-overlay">
+                                        <div class="play-btn-circle"><svg width="20" height="20" viewBox="0 0 24 24"
+                                                fill="currentColor">
+                                                <polygon points="5 3 19 12 5 21" />
+                                            </svg></div>
+                                        <span class="video-label">Videoni ko'rish</span>
+                                    </div>
+                                </div>
+                                <div class="video-meta"><span class="video-meta-item">Mijoz sharhi</span><span
+                                        class="video-meta-item">Andijon</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination swiper-pagination-videos"></div>
+                </div>
+            </div>
+
+            <div class="mid-cta" style="margin-bottom:56px">
+                <div class="mid-cta-inner">
+                    <div>
+                        <h3>Natijalarni ko'rdingizmi?</h3>
+                        <p>Siz ham shunday natijaga erishishingiz mumkin — <strong>hoziroq boshlang!</strong></p>
+                    </div>
+                    <a href="#order" class="btn btn-primary">Bepul konsultatsiya →</a>
+                </div>
+            </div>
+
+            <div class="sub-head">Yozma sharhlar</div>
+            <div class="reviews-written">
+                <div class="swiper reviews-swiper">
+                    <div class="swiper-wrapper">
+                        <div class="swiper-slide">
+                            <div class="rev-card">
+                                <div class="rev-stars"><svg width="16" height="16" viewBox="0 0 24 24"
+                                        fill="var(--gold)">
+                                        <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                    </svg><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--gold)">
+                                        <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                    </svg><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--gold)">
+                                        <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                    </svg><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--gold)">
+                                        <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                    </svg><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--gold)">
+                                        <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                    </svg></div>
+                                <p>"ABIHAYAT DAMLAMASI ajoyib natija berdi. Oshqozon muammolarim sezilarli kamaydi,
+                                    umumiy holat yaxshilandi. Juda tavsiya qilaman!"</p>
+                                <div class="rev-who">
+                                    <div class="rev-ava">D</div>
+                                    <div><strong>Dilnoza M.</strong><small>Toshkent · 2 oy</small></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="rev-card">
+                                <div class="rev-stars"><svg width="16" height="16" viewBox="0 0 24 24"
+                                        fill="var(--gold)">
+                                        <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                    </svg><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--gold)">
+                                        <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                    </svg><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--gold)">
+                                        <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                    </svg><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--gold)">
+                                        <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                    </svg><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--gold)">
+                                        <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                    </svg></div>
+                                <p>"ALIVIDA PLUS qabul qilganimdan keyin energiyam oshdi. Kundalik charchoq kamaydi.
+                                    Endi sportga ham boryapman!"</p>
+                                <div class="rev-who">
+                                    <div class="rev-ava">J</div>
+                                    <div><strong>Javohir K.</strong><small>Samarqand · 3 oy</small></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="rev-card">
+                                <div class="rev-stars"><svg width="16" height="16" viewBox="0 0 24 24"
+                                        fill="var(--gold)">
+                                        <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                    </svg><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--gold)">
+                                        <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                    </svg><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--gold)">
+                                        <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                    </svg><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--gold)">
+                                        <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                    </svg><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--gold)">
+                                        <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                    </svg></div>
+                                <p>"TRIOAKTIV boshlagan kunimdan boshlab kayfiyatim yaxshilandi. Soch to'kilishi ham
+                                    kamaydi. Natija kutilganidan ham yaxshi!"</p>
+                                <div class="rev-who">
+                                    <div class="rev-ava">M</div>
+                                    <div><strong>Malika R.</strong><small>Buxoro · 1.5 oy</small></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="rev-card">
+                                <div class="rev-stars"><svg width="16" height="16" viewBox="0 0 24 24"
+                                        fill="var(--gold)">
+                                        <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                    </svg><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--gold)">
+                                        <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                    </svg><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--gold)">
+                                        <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                    </svg><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--gold)">
+                                        <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                    </svg><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--gold)">
+                                        <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                    </svg></div>
+                                <p>"Onam uchun olib bergandim. Qon bosimi normallashdi, uyqu sifati oshdi. Butun oilamiz
+                                    minnatdor."</p>
+                                <div class="rev-who">
+                                    <div class="rev-ava">A</div>
+                                    <div><strong>Alisher N.</strong><small>Namangan · 4 oy</small></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="swiper-slide">
+                            <div class="rev-card">
+                                <div class="rev-stars"><svg width="16" height="16" viewBox="0 0 24 24"
+                                        fill="var(--gold)">
+                                        <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                    </svg><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--gold)">
+                                        <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                    </svg><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--gold)">
+                                        <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                    </svg><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--gold)">
+                                        <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                    </svg><svg width="16" height="16" viewBox="0 0 24 24" fill="var(--gold)">
+                                        <polygon
+                                            points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+                                    </svg></div>
+                                <p>"Immunitetim sezilarli kuchaydi, mavsumiy kasalliklar kam qildi. Organik bo'lgani
+                                    uchun ishonchli!"</p>
+                                <div class="rev-who">
+                                    <div class="rev-ava">S</div>
+                                    <div><strong>Sardor B.</strong><small>Farg'ona · 2.5 oy</small></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-pagination swiper-pagination-reviews"></div>
+                    <div class="swiper-button-prev"></div>
+                    <div class="swiper-button-next"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═════ FAQ ═════ -->
+    <section class="section" id="faq">
+        <div class="container">
+            <div class="section-head">
+                <span class="tag">Savollar</span>
+                <h2>Ko'p So'raladigan Savollar</h2>
+                <p>Javob topa olmadingizmi? Bepul konsultatsiya oling!</p>
+            </div>
+            <div class="faq-list">
+                <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Mahsulotlar xavfsizmi?<span
+                            class="faq-icon">+</span></button>
+                    <div class="faq-a">
+                        <p>Ha, barcha mahsulotlarimiz <strong>GMP sertifikatiga</strong> ega va Turkiyaning eng yaxshi
+                            laboratoriyalarida ishlab chiqarilgan. Tarkibida faqat tabiiy komponentlar mavjud.</p>
+                    </div>
+                </div>
+                <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Qachon natija ko'raman?<span
+                            class="faq-icon">+</span></button>
+                    <div class="faq-a">
+                        <p>Odatda <strong>2-4 haftada</strong> birinchi natijalar sezila boshlaydi. To'liq kurs 1-3 oy
+                            davom etadi. 98% mijozlarimiz qayta buyurtma beradi!</p>
+                    </div>
+                </div>
+                <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Yetkazib berish qanday
+                        ishlaydi?<span class="faq-icon">+</span></button>
+                    <div class="faq-a">
+                        <p>O'zbekiston bo'ylab <strong>2-5 kun</strong> ichida yetkazib beramiz. Toshkent ichida 1-2
+                            kun. To'lov yetkazib berilgandan keyin!</p>
+                    </div>
+                </div>
+                <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Qaysi mahsulot menga mos?<span
+                            class="faq-icon">+</span></button>
+                    <div class="faq-a">
+                        <p>Mutaxassisimiz sizga <strong>bepul konsultatsiya</strong> beradi. Formani to'ldiring — 15
+                            daqiqa ichida qo'ng'iroq qilamiz.</p>
+                    </div>
+                </div>
+                <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Bir necha mahsulotni birga qabul
+                        qilsa bo'ladimi?<span class="faq-icon">+</span></button>
+                    <div class="faq-a">
+                        <p>Ha, mahsulotlarimiz bir-birini to'ldiradi. Mutaxassisimiz sizga eng samarali
+                            <strong>kombinatsiyani tavsiya qiladi</strong> — bepul!
+                        </p>
+                    </div>
+                </div>
+                <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Nojo'ya ta'sirlari bormi?<span
+                            class="faq-icon">+</span></button>
+                    <div class="faq-a">
+                        <p>Mahsulotlarimiz 100% tabiiy organik tarkibga ega. Klinik tadqiqotlarda jiddiy nojo'ya
+                            ta'sirlar kuzatilmagan.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="mid-cta" style="margin-top:40px">
+                <div class="mid-cta-inner">
+                    <div>
+                        <h3>Boshqa savolingiz bormi?</h3>
+                        <p>Mutaxassisimiz <strong>bepul</strong> javob beradi!</p>
+                    </div>
+                    <a href="#order" class="btn btn-primary">Savol berish →</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═════ ORDER ═════ -->
+    <section class="section" id="order">
+        <div class="container">
+            <div class="order-layout">
+                <div class="order-info">
+                    <span class="tag">Hoziroq boshlang</span>
+                    <h2>Bepul Konsultatsiya Oling va O'zingizga Mos Dori Tanlang</h2>
+                    <p class="order-p">Formani to'ldiring — mutaxassisimiz <strong>15 daqiqa ichida</strong> siz bilan
+                        bog'lanadi. Yoqmasa — majburiyat yo'q.</p>
+                    <div class="guarantees">
+                        <div class="guar"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                            </svg> GMP Sertifikat</div>
+                        <div class="guar"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <rect x="1" y="3" width="15" height="13" />
+                                <polygon points="16 8 20 8 23 11 23 16 16 16 16 8" />
+                                <circle cx="5.5" cy="18.5" r="2.5" />
+                                <circle cx="18.5" cy="18.5" r="2.5" />
+                            </svg> Tezkor yetkazish</div>
+                        <div class="guar"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <path
+                                    d="M22 16.92v3a2 2 0 01-2.18 2 20 20 0 01-8.63-3.07 19.5 19.5 0 01-6-6 20 20 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 13 13 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 13 13 0 002.81.7A2 2 0 0122 16.92z" />
+                            </svg> 24/7 Qo'llab-quvvatlash</div>
+                        <div class="guar"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                stroke="currentColor" stroke-width="2">
+                                <polyline points="20 6 9 17 4 12" />
+                            </svg> Bepul konsultatsiya</div>
+                    </div>
+                    <div class="order-social">
+                        <p>Ijtimoiy tarmoqlarda:</p>
+                        <div class="social-links">
+                            <a href="https://www.instagram.com/abihayat_turkey" target="_blank" rel="noopener"
+                                class="soc-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                    <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                                </svg> @abihayat_turkey</a>
+                            <a href="https://www.instagram.com/alivida.organic" target="_blank" rel="noopener"
+                                class="soc-btn"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                                    <path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z" />
+                                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                                </svg> @alivida.organic</a>
+                            <a href="https://t.me/abihayat_turkey" target="_blank" rel="noopener"
+                                class="soc-btn soc-tg"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <line x1="22" y1="2" x2="11" y2="13" />
+                                    <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                                </svg> Telegram</a>
+                        </div>
+                    </div>
+                </div>
+                <form class="order-form" id="order-form" onsubmit="handleSubmit(event)" novalidate>
+                    <div class="form-top">
+                        <div class="form-top-icon"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                stroke="var(--g600)" stroke-width="2">
+                                <path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z" />
+                                <polyline points="14 2 14 8 20 8" />
+                                <line x1="16" y1="13" x2="8" y2="13" />
+                                <line x1="16" y1="17" x2="8" y2="17" />
+                                <polyline points="10 9 9 9 8 9" />
+                            </svg></div>
+                        <h3>Bepul konsultatsiya formasi</h3>
+                        <p>15 daqiqa ichida qo'ng'iroq qilamiz</p>
+                    </div>
+                    <div class="field">
+                        <label for="f-name">Ismingiz</label>
+                        <input type="text" id="f-name" placeholder="Ismingizni kiriting" required autocomplete="name">
+                    </div>
+                    <div class="field">
+                        <label for="f-phone">Telefon raqam</label>
+                        <input type="tel" id="f-phone" placeholder="+998 __ ___ __ __" required autocomplete="tel">
+                    </div>
+                    <div class="field">
+                        <label for="f-product">Qaysi mahsulot qiziqtiradi?</label>
+                        <select id="f-product" required>
+                            <option value="" disabled selected>Mahsulotni tanlang...</option>
+                            <option value="ABIHAYAT DAMLAMASI">ABIHAYAT DAMLAMASI</option>
+                            <option value="ALIVIDA PLUS">ALIVIDA PLUS</option>
+                            <option value="TRIOAKTIV">TRIOAKTIV</option>
+                            <option value="KONSULTATSIYA">Bilmayman — konsultatsiya kerak</option>
+                        </select>
+                    </div>
+                    <button type="submit" id="submit-btn" class="btn btn-primary btn-lg btn-full pulse-glow">
+                        <span class="btn-txt">Bepul konsultatsiya olish →</span>
+                        <span class="btn-load"><span class="spinner"></span> Yuborilmoqda...</span>
+                        <span class="btn-done">✓ Yuborildi! Tez orada qo'ng'iroq qilamiz</span>
+                    </button>
+                    <p class="form-note"><svg width="12" height="12" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" style="vertical-align:-1px;margin-right:4px">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2" />
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4" />
+                        </svg>Ma'lumotlaringiz himoyalangan · Bepul va majburiyatsiz</p>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═════ FOOTER ═════ -->
+    <footer class="footer" role="contentinfo">
+        <div class="container" style="position:relative">
+            <div class="footer-glow"></div>
+            <div class="footer-top">
+                <div class="footer-brand">
+                    <div class="footer-logo-wrap">
+                        <img src="logo.jpg" alt="ALIVIDA" class="footer-logo-img" width="38" height="38">
+                        <div><strong>ALIVIDA ORGANIC</strong></div>
+                    </div>
+                    <p>Turkiyada ishlab chiqarilgan 100% tabiiy organik mahsulotlar. 5000+ mijoz ishonch bilan
+                        foydalanmoqda.</p>
+                </div>
+                <div class="footer-col">
+                    <h4>Mahsulotlar</h4>
+                    <a href="#" onclick="openModal('abihayat');return false">ABIHAYAT DAMLAMASI</a>
+                    <a href="#" onclick="openModal('alivida');return false">ALIVIDA PLUS</a>
+                    <a href="#" onclick="openModal('trioaktiv');return false">TRIOAKTIV</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Sahifalar</h4>
+                    <a href="#products">Mahsulotlar</a>
+                    <a href="#about">Biz haqimizda</a>
+                    <a href="#reviews">Natijalar</a>
+                    <a href="#order">Buyurtma berish</a>
+                </div>
+                <div class="footer-col">
+                    <h4>Bog'lanish</h4>
+                    <a href="https://www.instagram.com/abihayat_turkey" target="_blank" rel="noopener">Instagram ·
+                        @abihayat_turkey</a>
+                    <a href="https://www.instagram.com/alivida.organic" target="_blank" rel="noopener">Instagram ·
+                        @alivida.organic</a>
+                    <a href="https://t.me/abihayat_turkey" target="_blank" rel="noopener">Telegram</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>© 2026 ALIVIDA ORGANIC. Barcha huquqlar himoyalangan.</p>
+                <p>Tabiat kuchi bilan yaratilgan</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ═════ MODAL ═════ -->
+    <div class="modal" id="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+        <div class="modal-overlay" onclick="closeModal()"></div>
+        <div class="modal-box">
+            <button class="modal-close" onclick="closeModal()" aria-label="Yopish">✕</button>
+            <div id="modal-inner"></div>
+        </div>
+    </div>
+
+    <!-- ═════ FLOATING ═════ -->
+    <div class="float-cta" id="float-cta">
+        <a href="#order" class="btn btn-primary btn-sm pulse-glow">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path
+                    d="M22 16.92v3a2 2 0 01-2.18 2 20 20 0 01-8.63-3.07 19.5 19.5 0 01-6-6 20 20 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 13 13 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 13 13 0 002.81.7A2 2 0 0122 16.92z" />
+            </svg>
+            Bepul konsultatsiya
+        </a>
+    </div>
+    <button class="btt" id="btt" onclick="window.scrollTo({top:0,behavior:'smooth'})"
+        aria-label="Yuqoriga qaytish">↑</button>
+
+    <!-- WHATSAPP FLOAT -->
+    <a href="https://wa.me/905531255588?text=Salom!%20ALIVIDA%20mahsulotlari%20haqida%20ma'lumot%20olmoqchiman"
+        target="_blank" rel="noopener" class="whatsapp-float" id="whatsapp-float" aria-label="WhatsApp orqali yozing">
+        <svg viewBox="0 0 24 24">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+    </a>
+
+    <!-- SOCIAL PROOF NOTIFICATION -->
+    <div class="social-proof-notif" id="social-proof" aria-live="polite">
+        <div class="spn-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--g600)"
+                stroke-width="2.5">
+                <polyline points="20 6 9 17 4 12" />
+            </svg></div>
+        <div class="spn-text">
+            <strong id="spn-name">Dilnoza M.</strong>
+            <span id="spn-product">ABIHAYAT DAMLAMASI buyurtma berdi</span><br>
+            <small id="spn-time">3 daqiqa oldin · Toshkent</small>
+        </div>
+    </div>
+
+    <!-- ═════ SCRIPTS ═════ -->
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
