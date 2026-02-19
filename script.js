@@ -419,24 +419,24 @@ const PRODUCTS = {
     title: 'ABIHAYAT DAMLAMASI',
     sub: 'Tabiiy shifobaxsh damchilar · 30ml',
     img: 'AbiHayat.jpg',
-    desc: 'ABIHAYAT DAMLAMASI — eng qadimiy tibbiy an\'analarga asoslangan noyob formulaga ega. 100% tabiiy tarkib: 50 dan ortiq shifobaxsh o\'simliklar.',
-    benefits: ['Immunitetni kuchli mustahkamlaydi', 'Jigar va buyrakni tozalaydi', 'Oshqozon-ichak traktini tiklaydi', 'Toksinlardan himoya qiladi', 'Qon tarkibini yaxshilaydi'],
-    usage: 'Kuniga 2-3 mahal, 15-20 tomchi (1 choy qoshiq) suv bilan. Ovqatdan 30 daqiqa oldin.'
+    desc: 'ABIHAYAT DAMLAMASI — qondagi qand miqdorini me\'yorlashtirish va qon bosimini barqarorlashtirish uchun maxsus ishlab chiqilgan tabiiy vosita.',
+    benefits: ['Qondagi qandni me\'yorlashtiradi', 'Qon bosimini normallashtiradi', 'Qandli diabet asoratlarini yoʻqotadi', 'Immunitetni mustahkamlaydi', 'Umumiy quvvatni oshiradi'],
+    usage: '2 mahal ovqatdan keyin 200 ml qaynagan suvga solib ichiladi.'
   },
   alivida: {
     title: 'ALIVIDA PLUS',
-    sub: 'Energiya va tozalanish · 60 kapsul',
+    sub: 'Bo\'g\'imlar va suyaklar salomatligi · 60 kapsul',
     img: 'alividia_plus.jpg',
-    desc: 'ALIVIDA PLUS — organizmni chuqur tozalash va energiya berish uchun yaratilgan kuchli organik kompleks.',
-    benefits: ['Metabolizmni tezlashtiradi', 'Organizmni chuqur tozalaydi', 'Energiya va kuch beradi', 'Terining holatini yaxshilaydi', 'Uyqu sifatini oshiradi'],
+    desc: 'ALIVIDA PLUS — bo\'g\'imlar va tayanch-harakat tizimi salomatligini tiklash uchun kuchli tabiiy formula.',
+    benefits: ['Boʻgʻimlar salomatligini tiklaydi', 'Ichki va tashqi tarafdan himoya qiladi', 'Yemirilish va yalligʻlanishni ketkazadi', 'Harakatchanlikni oshiradi', 'Og\'riqni kamaytiradi'],
     usage: 'Kuniga 2 mahal, 1 kapsuladan. Ovqat paytida suv bilan ichiladi. Kurs: 30 kun.'
   },
   trioaktiv: {
     title: 'TRIOAKTIV',
-    sub: '3X kuchli formula · 90 kapsul',
+    sub: 'Erkaklar salomatligi va quvvati · 90 kapsul',
     img: 'alividia_organic.jpg',
-    desc: 'TRIOAKTIV — 3 ta kuchli komponent birlashtirilgan eng samarali formula. Umumiy salomatlik uchun kompleks yechim.',
-    benefits: ['Umumiy salomatlikni yaxshilaydi', 'Vitamin yetishmovchiligini to\'ldiradi', 'Xotira va diqqatni oshiradi', 'Asab tizimini mustahkamlaydi', 'Soch, tirnoq va terini mustahkamlaydi'],
+    desc: 'TRIOAKTIV — jinsiy tizim faoliyatini yaxshilash va prostatitni oldini olish uchun maxsus ishlab chiqilgan kompleks.',
+    benefits: ['Jinsiy tizimni mustahkamlaydi', 'Prostatitka qarshi kuchli taʼsir koʻrsatadi', 'Jinsiy quvvatni oshiradi', 'Testosteron darajasini oshiradi', 'Umumiy tonusni ko\'taradi'],
     usage: 'Kuniga 3 mahal, 1 kapsuladan. Ovqatdan keyin. Kurs: 30-60 kun.'
   }
 };
