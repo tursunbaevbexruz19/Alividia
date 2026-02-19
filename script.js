@@ -448,6 +448,13 @@ function openModal(key) {
   const inner = document.getElementById('modal-inner');
   if (!m || !inner) return;
 
+  const map = {
+    'abihayat': 'ABIHAYAT DAMLAMASI',
+    'alivida': 'ALIVIDA PLUS',
+    'trioaktiv': 'TRIOAKTIV'
+  };
+  const pName = map[key] || '';
+
   inner.innerHTML = `
     <div class="modal-product-header">
       <img src="${p.img}" alt="${p.title}" class="modal-product-img" width="120" height="120">
@@ -460,7 +467,7 @@ function openModal(key) {
     <h3>Qo'llanilishi</h3>
     <p>${p.usage}</p>
     <div class="mcta">
-      <a href="#order" class="btn btn-primary" onclick="closeModal()">Buyurtma berish →</a>
+      <button class="btn btn-primary" onclick="closeModal(); selectProduct('${pName}')">Buyurtma berish →</button>
     </div>`;
   m.classList.add('open');
   document.body.style.overflow = 'hidden';
@@ -592,6 +599,32 @@ function quickCall() {
     .finally(() => {
       if (btn) { btn.disabled = false; btn.textContent = 'Qo\'ng\'iroq qiling →'; }
     });
+}
+
+// ══════════════════════════
+// SMART PRODUCT SELECTION
+// ══════════════════════════
+function selectProduct(val) {
+  const form = document.getElementById('order');
+  const select = document.getElementById('f-product');
+
+  if (form && select) {
+    // Scroll to form
+    const y = form.getBoundingClientRect().top + scrollY - 70;
+    window.scrollTo({ top: y, behavior: 'smooth' });
+
+    // Select option
+    select.value = val;
+
+    // Flash effect to show user where to look
+    select.style.transition = 'all 0.3s';
+    select.style.boxShadow = '0 0 0 4px rgba(34, 197, 94, 0.2)';
+    select.style.borderColor = 'var(--g500)';
+    setTimeout(() => {
+      select.style.boxShadow = '';
+      select.style.borderColor = '';
+    }, 1500);
+  }
 }
 
 // ══════════════════════════
