@@ -2944,6 +2944,14 @@ textarea {
         margin: 0 auto
     }
 
+    .card-body {
+        padding: 20px;
+    }
+
+    .card-body h3 {
+        font-size: 18px;
+    }
+
     .steps-row {
         grid-template-columns: 1fr;
         gap: 16px;
