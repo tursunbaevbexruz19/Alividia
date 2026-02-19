@@ -234,7 +234,7 @@ function initPhoneMask(id) {
 function initFloating() {
   const floatCta = document.getElementById('float-cta');
   const btt = document.getElementById('btt');
-  const waBtn = document.getElementById('whatsapp-float');
+  const waBtn = document.getElementById('phone-float');
   let ticking = false;
   window.addEventListener('scroll', () => {
     if (ticking) return;
