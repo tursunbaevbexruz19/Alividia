@@ -419,7 +419,7 @@ const PRODUCTS = {
     title: 'ABIHAYAT DAMLAMASI',
     sub: 'Karobkada 45 ta paket boʻladi',
     img: 'AbiHayat.jpg',
-    video: 'otziv2.mp4',
+    videos: ['otziv2.mp4', 'otziv3.mp4', 'otzivalividiaplus.mp4'],
     desc: 'ABIHAYAT DAMLAMASI — qondagi qand miqdorini me\'yorlashtirish va qon bosimini barqarorlashtirish uchun maxsus ishlab chiqilgan tabiiy vosita.',
     sections: [
       {
@@ -434,7 +434,7 @@ const PRODUCTS = {
     title: 'ALIVIDA PLUS',
     sub: 'Sirop, kapsula, krem bo\'ladi',
     img: 'alividia_organic.jpg',
-    video: 'alividia_plus.mp4',
+    videos: ['alividia_plus.mp4', 'olividaplusotziv.mp4', 'otzivalividiaplus.mp4'],
     desc: 'ALIVIDA PLUS — bo\'g\'imlar va tayanch-harakat tizimi salomatligini tiklash uchun kuchli tabiiy formula. Kompleks 3 xil mahsulotdan iborat.',
     sections: [
       {
@@ -465,7 +465,7 @@ const PRODUCTS = {
     title: 'TRIOAKTIV',
     sub: 'Qiyom bilan kapsula boʻladi',
     img: 'alividia_plus.jpg',
-    video: null,
+    videos: [],
     desc: 'TRIOAKTIV — jinsiy tizim faoliyatini yaxshilash va prostatitni oldini olish uchun maxsus ishlab chiqilgan kompleks.',
     sections: [
       {
@@ -507,9 +507,18 @@ function openModal(key) {
   inner.innerHTML = `
     <div class="modal-scroll-area">
       <div class="modal-video-box">
-        ${p.video ? `
-          <video src="${p.video}" muted playsinline loop poster="${p.img}"></video>
-          <div class="m-play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21" /></svg></div>
+        ${p.videos && p.videos.length > 0 ? `
+          <div class="swiper modal-video-swiper">
+            <div class="swiper-wrapper">
+              ${p.videos.map(vid => `
+                <div class="swiper-slide">
+                  <video src="${vid}" muted playsinline loop poster="${p.img}"></video>
+                  <div class="m-play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21" /></svg></div>
+                </div>
+              `).join('')}
+            </div>
+            <div class="swiper-pagination modal-video-pagination"></div>
+          </div>
         ` : `
           <img src="${p.img}" alt="${p.title}" style="width: 100%; height: 100%; object-fit: cover;">
         `}
@@ -568,18 +577,41 @@ function openModal(key) {
       </button>
     </div>`;
 
-  // Video logic
-  const mVideo = inner.querySelector('.modal-video-box video');
-  const mPlay = inner.querySelector('.m-play-btn');
-  if (mVideo && mPlay) {
-    mPlay.onclick = () => {
-      mVideo.muted = false;
-      mVideo.play().then(() => { mPlay.style.opacity = '0'; mPlay.style.pointerEvents = 'none'; }).catch(() => { });
-    };
-    mVideo.onclick = () => {
-      mVideo.pause();
-      mPlay.style.opacity = '1'; mPlay.style.pointerEvents = 'auto';
-    };
+  // Swiper & Video logic
+  if (p.videos && p.videos.length > 0) {
+    const swiperEl = inner.querySelector('.modal-video-swiper');
+    if (swiperEl) {
+      const modalSwiper = new Swiper(swiperEl, {
+        pagination: { el: '.modal-video-pagination', clickable: true },
+        spaceBetween: 0,
+        slidesPerView: 1,
+      });
+
+      const videos = swiperEl.querySelectorAll('video');
+      const playBtns = swiperEl.querySelectorAll('.m-play-btn');
+
+      // Play/Pause toggle
+      videos.forEach((vid, i) => {
+        const btn = playBtns[i];
+        btn.onclick = () => {
+          vid.muted = false;
+          vid.play().then(() => { btn.style.opacity = '0'; btn.style.pointerEvents = 'none'; }).catch(() => { });
+        };
+        vid.onclick = () => {
+          vid.pause();
+          btn.style.opacity = '1'; btn.style.pointerEvents = 'auto';
+        };
+      });
+
+      // Pause all on slide change
+      modalSwiper.on('slideChange', () => {
+        videos.forEach((vid, i) => {
+          vid.pause();
+          playBtns[i].style.opacity = '1';
+          playBtns[i].style.pointerEvents = 'auto';
+        });
+      });
+    }
   }
 
   m.classList.add('open');
