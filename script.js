@@ -439,7 +439,7 @@ const PRODUCTS = {
     sections: [
       {
         subtitle: '1. Alivida Plus Kapsulasi',
-        composition: ['Kurkumin - zarchava ildiz ekstrakti', 'Bioperin (qora murch ekstrakti)', 'Gidrolizlangan 2-tip kollagen', 'Organik oltingugurt', 'D3 vitamini (xolekalsiferol)'],
+        composition: ['Kurkumin - zarchava ildiz ekstrakti (tabiiy polifenol)', 'Bioperin (qora murch ekstrakti)', 'Gidrolizlangan 2-tip kollagen', 'Organik oltingugurt', 'D3 vitamini (xolekalsiferol)'],
         benefits: ['Sinovial suyuqlik ishlab chiqarilishini yaxshilaydi', 'Bo\'g\'im va tog\'aylar elastikligini ta\'minlaydi', 'Yallig\'lanishni kamaytirib og\'riqlarni yo\'qotadi', 'Tanani antioksidantlar bilan ta\'minlaydi', 'Metabolizmni tartibga soladi', 'Temir, magniy, kalsiy so\'rilishini kuchaytiradi']
       },
       {
@@ -451,6 +451,12 @@ const PRODUCTS = {
         subtitle: '3. Alivida Plus Kremi',
         composition: ['Panseriya ekstrakti', 'Dorivor yalpiz ekstrakti', 'Qalampirmunchoq', 'Asalari mumi', 'Oq qarag\'ay', 'Tabiiy o\'simlik yog\'lari'],
         benefits: ['Kollagen hosil bo\'lishini yaxshilaydi', 'Teri orqali yallig\'lanish o\'chog\'iga chuqur ta\'sir qiladi', 'Shishlarni bartaraf qilishga yordam beradi', 'Harakatni yengillashtiradi', 'Og\'riqlarni bartaraf qilishga yordam beradi']
+      },
+      {
+        subtitle: 'Kasalliklar bo\'yicha tavsiya',
+        benefitsTitle: 'Quyidagi holatlarda yordam beradi',
+        composition: [],
+        benefits: ['Artroz', 'Gonartroz', 'Revmatizm', 'Podagra', 'Revmatoid artrit', 'Poliartrit', 'Osteoxondroz']
       }
     ],
     usage: 'Kuniga 2 mahal, 1 kapsuladan. Ovqat paytida suv bilan ichiladi. Krem va sirop mutaxassis tavsiyasiga ko\'ra qo\'llaniladi. Kurs: 30 kun.'
@@ -463,9 +469,21 @@ const PRODUCTS = {
     desc: 'TRIOAKTIV — jinsiy tizim faoliyatini yaxshilash va prostatitni oldini olish uchun maxsus ishlab chiqilgan kompleks.',
     sections: [
       {
-        subtitle: 'Asosiy Tarkibi',
-        composition: ['Epimedium ekstrakti (Horny Goat Weed)', 'Qizil jenshen (Korean Red Ginseng)', 'Rux asparaginati (Zinc)', 'L-Arginin amino kislotasi', 'Maca ildizi ekstrakti (Lepidium meyenii)'],
-        benefits: ['Jinsiy tizimni mustahkamlaydi', 'Prostatitka qarshi kuchli taʼsir koʻrsatadi', 'Jinsiy quvvatni oshiradi', 'Testosteron darajasini oshiradi', 'Umumiy tonusni ko\'taradi']
+        subtitle: 'Tarkibi (Composition)',
+        composition: ['Red Ginseng (Korea)', 'Pure Honey (China)', 'Black Cumin (Iran)', 'Satallios (India)', 'O\'zbekiston giyohlari (Mavsula, Kunjut, Baxmal, Ashvaganda, Jenshen, Tabiiy asal, Asalari suti, Zanjabil, Qora sedana, Qora andiz, Qalampirmunchoq, Sholg\'om urug\'i, Qovoq urug\'i, Shirinmiya, Oltin tomir)'],
+        benefits: []
+      },
+      {
+        subtitle: 'Trio Aktiv xususiyatlari',
+        benefitsTitle: 'Asosiy xususiyatlar',
+        composition: [],
+        benefits: ['Brain function (Miya faoliyati)', 'Libido', 'Erection (Ereksiya)', 'Hormone balance (Gormon balansi)', 'Energij (Energiya)', 'Sperm quality (Sperma sifati)', 'Premature ejaculation (Erta eyakulyatsiya)']
+      },
+      {
+        subtitle: 'Kasalliklar bo\'yicha tavsiya',
+        benefitsTitle: 'Quyidagi holatlarda yordam beradi',
+        composition: [],
+        benefits: ['Jinsiy zaiflik', 'Bepushtlik', 'Prostatit', 'G Nefrit (Glomerulonefrit)', 'Prostata bezi adinomasi', 'Siydik yo\'llari yallig\'lanishlari', 'Peshobga tez-tez chiqish', 'Varikasel (Varikotsele)', 'Turli Infeksiyalar']
       }
     ],
     usage: 'Kuniga 3 mahal, 1 kapsuladan. Ovqatdan keyin. Kurs: 30-60 kun.'
@@ -504,6 +522,7 @@ function openModal(key) {
           <div class="m-sub-product">
             ${s.subtitle && s.subtitle !== 'Asosiy Tarkibi' && s.subtitle !== 'Tarkibi (Composition)' ? `<div class="m-sub-title-wrap"><h4 class="m-sub-title">${s.subtitle}</h4></div>` : ''}
             
+            ${s.composition && s.composition.length > 0 ? `
             <div class="m-section">
               <h3 class="m-title">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--g600)" stroke-width="2.5"><path d="M12 2L2 22h20L12 2z"/></svg>
@@ -513,16 +532,19 @@ function openModal(key) {
                 ${s.composition.map(c => `<div class="m-comp-item"><span class="m-dot"></span>${c}</div>`).join('')}
               </div>
             </div>
+            ` : ''}
 
+            ${s.benefits && s.benefits.length > 0 ? `
             <div class="m-section">
               <h3 class="m-title">
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--g600)" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-                Qanday yordam beradi?
+                ${s.benefitsTitle || 'Qanday yordam beradi?'}
               </h3>
               <ul class="m-bens">
                 ${s.benefits.map(b => `<li><span class="m-chk">✓</span><span>${b}</span></li>`).join('')}
               </ul>
             </div>
+            ` : ''}
           </div>
         `).join('')}
 
