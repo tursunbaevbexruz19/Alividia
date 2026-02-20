@@ -1284,6 +1284,118 @@ textarea {
     position: relative
 }
 
+/* ═════ ABOUT SECTION ═════ */
+.about-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 48px;
+    align-items: center;
+}
+
+@media(min-width: 992px) {
+    .about-layout {
+        grid-template-columns: 1fr 1fr;
+        gap: 64px;
+    }
+}
+
+.about-text h2 {
+    font-size: 32px;
+    margin-bottom: 24px;
+    line-height: 1.3;
+}
+
+.about-text p {
+    color: var(--txt2);
+    margin-bottom: 16px;
+    line-height: 1.6;
+}
+
+.about-list {
+    margin-top: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.feat {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px 20px;
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--r2);
+    transition: var(--tr);
+}
+
+.feat:hover {
+    box-shadow: var(--shadow-md);
+    border-color: var(--border-hover);
+    transform: translateY(-2px);
+}
+
+.feat-icon {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    background: rgba(22, 163, 74, 0.1);
+    border-radius: var(--r);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.feat h4 {
+    font-size: 16px;
+    font-weight: 700;
+    margin-bottom: 4px;
+    color: var(--txt);
+}
+
+.feat p {
+    margin: 0;
+    font-size: 13px;
+    color: var(--txt3);
+}
+
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
+}
+
+.stat-card {
+    background: var(--bg-card);
+    border: 1px solid var(--border);
+    border-radius: var(--r2);
+    padding: 32px 16px;
+    text-align: center;
+    transition: var(--tr);
+}
+
+.stat-card:hover {
+    box-shadow: var(--shadow-md);
+    transform: translateY(-4px);
+    border-color: var(--border-hover);
+}
+
+.sc-num {
+    font-family: var(--ff);
+    font-size: 36px;
+    font-weight: 900;
+    color: var(--g600);
+    margin-bottom: 8px;
+}
+
+.sc-txt {
+    font-size: 12px;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    font-weight: 600;
+    color: var(--txt3);
+}
+
 /* в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ PROCESS STEPS в•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђв•ђ */
 .steps-row {
     display: grid;
