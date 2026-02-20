@@ -419,7 +419,7 @@ const PRODUCTS = {
     title: 'ABIHAYAT DAMLAMASI',
     sub: 'Karobkada 45 ta paket boʻladi',
     img: 'AbiHayat.jpg',
-    videos: ['otziv2.mp4', 'otziv3.mp4', 'otzivalividiaplus.mp4'],
+    videos: ['otziv2.mp4', 'otziv3.mp4', 'otziv1.mp4'],
     desc: 'ABIHAYAT DAMLAMASI — qondagi qand miqdorini me\'yorlashtirish va qon bosimini barqarorlashtirish uchun maxsus ishlab chiqilgan tabiiy vosita.',
     sections: [
       {
@@ -620,7 +620,11 @@ function openModal(key) {
 
 function closeModal() {
   const m = document.getElementById('modal');
-  if (m) m.classList.remove('open');
+  if (m) {
+    m.classList.remove('open');
+    // Pause any playing videos inside modal
+    m.querySelectorAll('video').forEach(vid => vid.pause());
+  }
   document.body.style.overflow = '';
 }
 

@@ -2412,10 +2412,13 @@ textarea {
 /* Video Header */
 .modal-video-box {
     position: relative;
-    width: 100%;
-    aspect-ratio: 16/9;
+    width: calc(100% - 32px);
+    margin: 16px auto 0;
+    aspect-ratio: 4/5;
     background: #000;
     overflow: hidden;
+    border-radius: 16px;
+    box-shadow: var(--shadow-md);
 }
 
 /* Swiper for videos */
@@ -2423,6 +2426,8 @@ textarea {
     position: relative;
     width: 100%;
     height: 100%;
+    border-radius: 16px;
+    overflow: hidden;
 }
 
 .modal-video-swiper .swiper-slide {
