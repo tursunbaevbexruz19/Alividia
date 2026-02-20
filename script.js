@@ -419,7 +419,9 @@ const PRODUCTS = {
     title: 'ABIHAYAT DAMLAMASI',
     sub: 'Tabiiy shifobaxsh damchilar · 30ml',
     img: 'AbiHayat.jpg',
+    video: 'otziv3.mp4',
     desc: 'ABIHAYAT DAMLAMASI — qondagi qand miqdorini me\'yorlashtirish va qon bosimini barqarorlashtirish uchun maxsus ishlab chiqilgan tabiiy vosita.',
+    composition: ['Qora zira ekstrakti (Black Cumin)', 'Asal (Tabiiy asalarichilik)', 'Zanjabil (Ginger)', 'Zaytun yog\'i (Olive Extract)', 'Maxsus 50+ shifobaxsh o\'simliklar'],
     benefits: ['Qondagi qandni me\'yorlashtiradi', 'Qon bosimini normallashtiradi', 'Qandli diabet asoratlarini yoʻqotadi', 'Immunitetni mustahkamlaydi', 'Umumiy quvvatni oshiradi'],
     usage: '2 mahal ovqatdan keyin 200 ml qaynagan suvga solib ichiladi.'
   },
@@ -427,7 +429,9 @@ const PRODUCTS = {
     title: 'ALIVIDA PLUS',
     sub: 'Bo\'g\'imlar va suyaklar salomatligi · 60 kapsul',
     img: 'alividia_plus.jpg',
+    video: 'alividia_plus.mp4',
     desc: 'ALIVIDA PLUS — bo\'g\'imlar va tayanch-harakat tizimi salomatligini tiklash uchun kuchli tabiiy formula.',
+    composition: ['Kollagen (Collagen Peptides)', 'Glukozamin (Glucosamine Sulfate)', 'Xondroitin (Chondroitin)', 'D3 Vitamini', 'Boshqa aktiv mineral komplekslar'],
     benefits: ['Boʻgʻimlar salomatligini tiklaydi', 'Ichki va tashqi tarafdan himoya qiladi', 'Yemirilish va yalligʻlanishni ketkazadi', 'Harakatchanlikni oshiradi', 'Og\'riqni kamaytiradi'],
     usage: 'Kuniga 2 mahal, 1 kapsuladan. Ovqat paytida suv bilan ichiladi. Kurs: 30 kun.'
   },
@@ -435,7 +439,9 @@ const PRODUCTS = {
     title: 'TRIOAKTIV',
     sub: 'Erkaklar salomatligi va quvvati · 90 kapsul',
     img: 'alividia_organic.jpg',
+    video: 'olividaplusotziv.mp4', // Using one of the available review videos as a placeholder
     desc: 'TRIOAKTIV — jinsiy tizim faoliyatini yaxshilash va prostatitni oldini olish uchun maxsus ishlab chiqilgan kompleks.',
+    composition: ['Epimedium ekstrakti (Horny Goat Weed)', 'Qizil jenshen (Korean Red Ginseng)', 'Rux asparaginati (Zinc)', 'L-Arginin amino kislotasi', 'Maca ildizi ekstrakti (Lepidium meyenii)'],
     benefits: ['Jinsiy tizimni mustahkamlaydi', 'Prostatitka qarshi kuchli taʼsir koʻrsatadi', 'Jinsiy quvvatni oshiradi', 'Testosteron darajasini oshiradi', 'Umumiy tonusni ko\'taradi'],
     usage: 'Kuniga 3 mahal, 1 kapsuladan. Ovqatdan keyin. Kurs: 30-60 kun.'
   }
@@ -456,19 +462,68 @@ function openModal(key) {
   const pName = map[key] || '';
 
   inner.innerHTML = `
-    <div class="modal-product-header">
-      <img src="${p.img}" alt="${p.title}" class="modal-product-img" width="120" height="120">
-      <h2 id="modal-title">${p.title}</h2>
-      <p class="msub">${p.sub}</p>
+    <div class="modal-scroll-area">
+      <div class="modal-video-box">
+        <video src="${p.video}" muted playsinline loop poster="${p.img}"></video>
+        <div class="m-play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21" /></svg></div>
+      </div>
+      
+      <div class="modal-info-wrap">
+        <div class="modal-info-head">
+          <h2 id="modal-title">${p.title}</h2>
+          <span class="m-badge">${p.sub}</span>
+        </div>
+        <p class="m-desc">${p.desc}</p>
+        
+        <div class="m-section">
+          <h3 class="m-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--g600)" stroke-width="2.5"><path d="M12 2L2 22h20L12 2z"/></svg>
+            Asosiy tarkibi
+          </h3>
+          <div class="m-comp-grid">
+            ${p.composition.map(c => `<div class="m-comp-item"><span class="m-dot"></span>${c}</div>`).join('')}
+          </div>
+        </div>
+
+        <div class="m-section">
+          <h3 class="m-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--g600)" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            Foydali xususiyatlar
+          </h3>
+          <ul class="m-bens">
+            ${p.benefits.map(b => `<li><span class="m-chk">✓</span><span>${b}</span></li>`).join('')}
+          </ul>
+        </div>
+
+        <div class="m-section m-usage-box">
+          <h3 class="m-title">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--g600)" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Qo'llash usuli
+          </h3>
+          <p>${p.usage}</p>
+        </div>
+      </div>
     </div>
-    <p>${p.desc}</p>
-    <h3>Foydali xususiyatlar</h3>
-    <ul>${p.benefits.map(b => `<li>${b}</li>`).join('')}</ul>
-    <h3>Qo'llanilishi</h3>
-    <p>${p.usage}</p>
-    <div class="mcta">
-      <button class="btn btn-primary" onclick="closeModal(); selectProduct('${pName}')">Buyurtma berish →</button>
+    <div class="m-sticky-cta">
+      <button class="btn btn-primary btn-full pulse-glow" onclick="closeModal(); selectProduct('${pName}')">
+        Buyurtma berish →
+      </button>
     </div>`;
+
+  // Video logic
+  const mVideo = inner.querySelector('.modal-video-box video');
+  const mPlay = inner.querySelector('.m-play-btn');
+  if (mVideo && mPlay) {
+    mPlay.onclick = () => {
+      mVideo.muted = false;
+      mVideo.play().then(() => { mPlay.style.opacity = '0'; mPlay.style.pointerEvents = 'none'; }).catch(() => { });
+    };
+    mVideo.onclick = () => {
+      mVideo.pause();
+      mPlay.style.opacity = '1'; mPlay.style.pointerEvents = 'auto';
+    };
+  }
+
   m.classList.add('open');
   document.body.style.overflow = 'hidden';
 }
