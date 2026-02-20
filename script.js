@@ -419,7 +419,7 @@ const PRODUCTS = {
     title: 'ABIHAYAT DAMLAMASI',
     sub: 'Karobkada 45 ta paket boʻladi',
     img: 'AbiHayat.jpg',
-    video: 'otziv3.mp4',
+    video: 'otziv2.mp4',
     desc: 'ABIHAYAT DAMLAMASI — qondagi qand miqdorini me\'yorlashtirish va qon bosimini barqarorlashtirish uchun maxsus ishlab chiqilgan tabiiy vosita.',
     sections: [
       {
@@ -433,7 +433,7 @@ const PRODUCTS = {
   alivida: {
     title: 'ALIVIDA PLUS',
     sub: 'Sirop, kapsula, krem bo\'ladi',
-    img: 'alividia_plus.jpg',
+    img: 'alividia_organic.jpg',
     video: 'alividia_plus.mp4',
     desc: 'ALIVIDA PLUS — bo\'g\'imlar va tayanch-harakat tizimi salomatligini tiklash uchun kuchli tabiiy formula. Kompleks 3 xil mahsulotdan iborat.',
     sections: [
@@ -464,7 +464,7 @@ const PRODUCTS = {
   trioaktiv: {
     title: 'TRIOAKTIV',
     sub: 'Qiyom bilan kapsula boʻladi',
-    img: 'alividia_organic.jpg',
+    img: 'alividia_plus.jpg',
     video: null,
     desc: 'TRIOAKTIV — jinsiy tizim faoliyatini yaxshilash va prostatitni oldini olish uchun maxsus ishlab chiqilgan kompleks.',
     sections: [
