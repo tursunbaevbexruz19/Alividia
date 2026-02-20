@@ -421,28 +421,53 @@ const PRODUCTS = {
     img: 'AbiHayat.jpg',
     video: 'otziv3.mp4',
     desc: 'ABIHAYAT DAMLAMASI — qondagi qand miqdorini me\'yorlashtirish va qon bosimini barqarorlashtirish uchun maxsus ishlab chiqilgan tabiiy vosita.',
-    composition: ['Qora zira ekstrakti (Black Cumin)', 'Asal (Tabiiy asalarichilik)', 'Zanjabil (Ginger)', 'Zaytun yog\'i (Olive Extract)', 'Maxsus 50+ shifobaxsh o\'simliklar'],
-    benefits: ['Qondagi qandni me\'yorlashtiradi', 'Qon bosimini normallashtiradi', 'Qandli diabet asoratlarini yoʻqotadi', 'Immunitetni mustahkamlaydi', 'Umumiy quvvatni oshiradi'],
+    sections: [
+      {
+        subtitle: 'Tarkibi (Composition)',
+        composition: ['Zaytun ekstrakti', 'Dolchin ekstrakti', 'Kekkin', '67 xil turga yaqin makro va mikro elementlar', 'A, B, C, D guruhiga oid vitamin komplekslar'],
+        benefits: ['Qondagi qandni me\'yorlashtiradi', 'Qon bosimini normallashtiradi', 'Qandli diabet asoratlarini yoʻqotadi', 'Immunitetni mustahkamlaydi', 'Umumiy quvvatni oshiradi']
+      }
+    ],
     usage: '2 mahal ovqatdan keyin 200 ml qaynagan suvga solib ichiladi.'
   },
   alivida: {
     title: 'ALIVIDA PLUS',
-    sub: 'Bo\'g\'imlar va suyaklar salomatligi · 60 kapsul',
+    sub: '3 xil mahsulotdan iborat kompleks',
     img: 'alividia_plus.jpg',
     video: 'alividia_plus.mp4',
-    desc: 'ALIVIDA PLUS — bo\'g\'imlar va tayanch-harakat tizimi salomatligini tiklash uchun kuchli tabiiy formula.',
-    composition: ['Kollagen (Collagen Peptides)', 'Glukozamin (Glucosamine Sulfate)', 'Xondroitin (Chondroitin)', 'D3 Vitamini', 'Boshqa aktiv mineral komplekslar'],
-    benefits: ['Boʻgʻimlar salomatligini tiklaydi', 'Ichki va tashqi tarafdan himoya qiladi', 'Yemirilish va yalligʻlanishni ketkazadi', 'Harakatchanlikni oshiradi', 'Og\'riqni kamaytiradi'],
-    usage: 'Kuniga 2 mahal, 1 kapsuladan. Ovqat paytida suv bilan ichiladi. Kurs: 30 kun.'
+    desc: 'ALIVIDA PLUS — bo\'g\'imlar va tayanch-harakat tizimi salomatligini tiklash uchun kuchli tabiiy formula. Kompleks 3 xil mahsulotdan iborat.',
+    sections: [
+      {
+        subtitle: '1. Alivida Plus Kapsulasi',
+        composition: ['Kurkumin - zarchava ildiz ekstrakti', 'Bioperin (qora murch ekstrakti)', 'Gidrolizlangan 2-tip kollagen', 'Organik oltingugurt', 'D3 vitamini (xolekalsiferol)'],
+        benefits: ['Sinovial suyuqlik ishlab chiqarilishini yaxshilaydi', 'Bo\'g\'im va tog\'aylar elastikligini ta\'minlaydi', 'Yallig\'lanishni kamaytirib og\'riqlarni yo\'qotadi', 'Tanani antioksidantlar bilan ta\'minlaydi', 'Metabolizmni tartibga soladi', 'Temir, magniy, kalsiy so\'rilishini kuchaytiradi']
+      },
+      {
+        subtitle: '2. Alivida Plus Gidrolati (siropi)',
+        composition: ['Kurkumin (zarchava ekstrakti)', 'Uzum danagi (flovonoidlar va polifenollar)', 'Asafoetida (sarvinjon)', 'Asalari mumi (propolis)', 'Qora xalila', 'Achchiq bodom', 'Oq karrak', 'Havlinjon', 'Dastarbosh', 'Distillangan suv'],
+        benefits: ['Bo\'g\'imlardagi shish va yallig\'lanishlarni bartaraf qilishga yordam beradi', 'Tizzadagi og\'riqlarni kamaytiradi', 'Tog\'ay to\'qimalari yemirilishini bartaraf qilishga yordam beradi', 'Immunitetni oshirib, qon aylanishini yaxshilaydi', 'Umurtqa disklarining tiklanishiga yordam beradi', 'Tog\'ay va bo\'g\'imlarning qayta tiklanishini tezlashtiradi']
+      },
+      {
+        subtitle: '3. Alivida Plus Kremi',
+        composition: ['Panseriya ekstrakti', 'Dorivor yalpiz ekstrakti', 'Qalampirmunchoq', 'Asalari mumi', 'Oq qarag\'ay', 'Tabiiy o\'simlik yog\'lari'],
+        benefits: ['Kollagen hosil bo\'lishini yaxshilaydi', 'Teri orqali yallig\'lanish o\'chog\'iga chuqur ta\'sir qiladi', 'Shishlarni bartaraf qilishga yordam beradi', 'Harakatni yengillashtiradi', 'Og\'riqlarni bartaraf qilishga yordam beradi']
+      }
+    ],
+    usage: 'Kuniga 2 mahal, 1 kapsuladan. Ovqat paytida suv bilan ichiladi. Krem va sirop mutaxassis tavsiyasiga ko\'ra qo\'llaniladi. Kurs: 30 kun.'
   },
   trioaktiv: {
     title: 'TRIOAKTIV',
     sub: 'Erkaklar salomatligi va quvvati · 90 kapsul',
     img: 'alividia_organic.jpg',
-    video: 'olividaplusotziv.mp4', // Using one of the available review videos as a placeholder
+    video: 'olividaplusotziv.mp4',
     desc: 'TRIOAKTIV — jinsiy tizim faoliyatini yaxshilash va prostatitni oldini olish uchun maxsus ishlab chiqilgan kompleks.',
-    composition: ['Epimedium ekstrakti (Horny Goat Weed)', 'Qizil jenshen (Korean Red Ginseng)', 'Rux asparaginati (Zinc)', 'L-Arginin amino kislotasi', 'Maca ildizi ekstrakti (Lepidium meyenii)'],
-    benefits: ['Jinsiy tizimni mustahkamlaydi', 'Prostatitka qarshi kuchli taʼsir koʻrsatadi', 'Jinsiy quvvatni oshiradi', 'Testosteron darajasini oshiradi', 'Umumiy tonusni ko\'taradi'],
+    sections: [
+      {
+        subtitle: 'Asosiy Tarkibi',
+        composition: ['Epimedium ekstrakti (Horny Goat Weed)', 'Qizil jenshen (Korean Red Ginseng)', 'Rux asparaginati (Zinc)', 'L-Arginin amino kislotasi', 'Maca ildizi ekstrakti (Lepidium meyenii)'],
+        benefits: ['Jinsiy tizimni mustahkamlaydi', 'Prostatitka qarshi kuchli taʼsir koʻrsatadi', 'Jinsiy quvvatni oshiradi', 'Testosteron darajasini oshiradi', 'Umumiy tonusni ko\'taradi']
+      }
+    ],
     usage: 'Kuniga 3 mahal, 1 kapsuladan. Ovqatdan keyin. Kurs: 30-60 kun.'
   }
 };
@@ -475,25 +500,32 @@ function openModal(key) {
         </div>
         <p class="m-desc">${p.desc}</p>
         
-        <div class="m-section">
-          <h3 class="m-title">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--g600)" stroke-width="2.5"><path d="M12 2L2 22h20L12 2z"/></svg>
-            Asosiy tarkibi
-          </h3>
-          <div class="m-comp-grid">
-            ${p.composition.map(c => `<div class="m-comp-item"><span class="m-dot"></span>${c}</div>`).join('')}
-          </div>
-        </div>
+        ${p.sections.map(s => `
+          <div class="m-sub-product">
+            ${s.subtitle && s.subtitle !== 'Asosiy Tarkibi' && s.subtitle !== 'Tarkibi (Composition)' ? `<div class="m-sub-title-wrap"><h4 class="m-sub-title">${s.subtitle}</h4></div>` : ''}
+            
+            <div class="m-section">
+              <h3 class="m-title">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--g600)" stroke-width="2.5"><path d="M12 2L2 22h20L12 2z"/></svg>
+                Asosiy tarkibi
+              </h3>
+              <div class="m-comp-grid">
+                ${s.composition.map(c => `<div class="m-comp-item"><span class="m-dot"></span>${c}</div>`).join('')}
+              </div>
+            </div>
 
-        <div class="m-section">
-          <h3 class="m-title">
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--g600)" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-            Foydali xususiyatlar
-          </h3>
-          <ul class="m-bens">
-            ${p.benefits.map(b => `<li><span class="m-chk">✓</span><span>${b}</span></li>`).join('')}
-          </ul>
-        </div>
+            <div class="m-section">
+              <h3 class="m-title">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--g600)" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                Qanday yordam beradi?
+              </h3>
+              <ul class="m-bens">
+                ${s.benefits.map(b => `<li><span class="m-chk">✓</span><span>${b}</span></li>`).join('')}
+              </ul>
+            </div>
+          </div>
+        `).join('')}
+
 
         <div class="m-section m-usage-box">
           <h3 class="m-title">
