@@ -606,7 +606,22 @@ textarea {
     backdrop-filter: blur(16px);
     border: 1px solid var(--border);
     border-radius: var(--r2);
-    box-shadow: var(--shadow-md)
+    box-shadow: var(--shadow-md);
+    margin-bottom: 24px;
+}
+
+.disclaimer-inline {
+    font-size: 13px;
+    color: var(--txt3);
+    text-align: center;
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 12px 20px;
+    background: rgba(255, 255, 255, 0.45);
+    backdrop-filter: blur(8px);
+    border-radius: var(--r2);
+    border: 1px solid rgba(0, 0, 0, 0.06);
+    line-height: 1.5;
 }
 
 .hs {
