@@ -629,9 +629,6 @@ document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal
 // ══════════════════════════
 // TELEGRAM SEND HELPER
 // ══════════════════════════
-// ══════════════════════════
-// TELEGRAM SEND HELPER
-// ══════════════════════════
 async function sendToTelegram(text) {
   const url = `https://api.telegram.org/bot${TG_BOT}/sendMessage`;
 
@@ -750,7 +747,7 @@ function quickCall() {
 // SMART PRODUCT SELECTION
 // ══════════════════════════
 function selectProduct(val) {
-  const form = document.getElementById('order');
+  const form = document.getElementById('order-form');
   const select = document.getElementById('f-product');
 
   if (form && select) {
