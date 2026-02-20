@@ -417,7 +417,7 @@ function toggleFaq(btn) {
 const PRODUCTS = {
   abihayat: {
     title: 'ABIHAYAT DAMLAMASI',
-    sub: 'Tabiiy shifobaxsh damchilar · 30ml',
+    sub: 'Karobkada 45 ta paket boʻladi',
     img: 'AbiHayat.jpg',
     video: 'otziv3.mp4',
     desc: 'ABIHAYAT DAMLAMASI — qondagi qand miqdorini me\'yorlashtirish va qon bosimini barqarorlashtirish uchun maxsus ishlab chiqilgan tabiiy vosita.',
@@ -428,11 +428,11 @@ const PRODUCTS = {
         benefits: ['Qondagi qandni me\'yorlashtiradi', 'Qon bosimini normallashtiradi', 'Qandli diabet asoratlarini yoʻqotadi', 'Immunitetni mustahkamlaydi', 'Umumiy quvvatni oshiradi']
       }
     ],
-    usage: '2 mahal ovqatdan keyin 200 ml qaynagan suvga solib ichiladi.'
+    usage: 'Qoʻllanilishi: mutaxassis tavsiya qiladi'
   },
   alivida: {
     title: 'ALIVIDA PLUS',
-    sub: '3 xil mahsulotdan iborat kompleks',
+    sub: 'Sirop, kapsula, krem bo\'ladi',
     img: 'alividia_plus.jpg',
     video: 'alividia_plus.mp4',
     desc: 'ALIVIDA PLUS — bo\'g\'imlar va tayanch-harakat tizimi salomatligini tiklash uchun kuchli tabiiy formula. Kompleks 3 xil mahsulotdan iborat.',
@@ -459,13 +459,13 @@ const PRODUCTS = {
         benefits: ['Artroz', 'Gonartroz', 'Revmatizm', 'Podagra', 'Revmatoid artrit', 'Poliartrit', 'Osteoxondroz']
       }
     ],
-    usage: 'Kuniga 2 mahal, 1 kapsuladan. Ovqat paytida suv bilan ichiladi. Krem va sirop mutaxassis tavsiyasiga ko\'ra qo\'llaniladi. Kurs: 30 kun.'
+    usage: 'Qo\'llanilishi: Kasallik darajasidan kelib chiqqan holda mutaxassis tavsiya etadi'
   },
   trioaktiv: {
     title: 'TRIOAKTIV',
-    sub: 'Erkaklar salomatligi va quvvati · 90 kapsul',
+    sub: 'Qiyom bilan kapsula boʻladi',
     img: 'alividia_organic.jpg',
-    video: 'olividaplusotziv.mp4',
+    video: null,
     desc: 'TRIOAKTIV — jinsiy tizim faoliyatini yaxshilash va prostatitni oldini olish uchun maxsus ishlab chiqilgan kompleks.',
     sections: [
       {
@@ -486,7 +486,7 @@ const PRODUCTS = {
         benefits: ['Jinsiy zaiflik', 'Bepushtlik', 'Prostatit', 'G Nefrit (Glomerulonefrit)', 'Prostata bezi adinomasi', 'Siydik yo\'llari yallig\'lanishlari', 'Peshobga tez-tez chiqish', 'Varikasel (Varikotsele)', 'Turli Infeksiyalar']
       }
     ],
-    usage: 'Kuniga 3 mahal, 1 kapsuladan. Ovqatdan keyin. Kurs: 30-60 kun.'
+    usage: 'Ichilishi mutaxassis tavsiyasi asosida'
   }
 };
 
@@ -507,8 +507,12 @@ function openModal(key) {
   inner.innerHTML = `
     <div class="modal-scroll-area">
       <div class="modal-video-box">
-        <video src="${p.video}" muted playsinline loop poster="${p.img}"></video>
-        <div class="m-play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21" /></svg></div>
+        ${p.video ? `
+          <video src="${p.video}" muted playsinline loop poster="${p.img}"></video>
+          <div class="m-play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21" /></svg></div>
+        ` : `
+          <img src="${p.img}" alt="${p.title}" style="width: 100%; height: 100%; object-fit: cover;">
+        `}
       </div>
       
       <div class="modal-info-wrap">
