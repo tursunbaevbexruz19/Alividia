@@ -491,7 +491,7 @@ const PRODUCTS = {
   lasita: {
     title: 'LASITA',
     sub: 'Krem, kapsula, svicha boʻladi',
-    img: 'lasita.jpg',
+    img: 'LASITA.png',
     videos: [],
     desc: 'LASITA — ayollar salomatligini qoʻllab-quvvatlash va ginekologik muammolarni bartaraf etish uchun maxsus ishlab chiqilgan tabiiy kompleks.',
     sections: [
