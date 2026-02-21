@@ -256,24 +256,56 @@
                                         <polyline points="20 6 9 17 4 12" />
                                     </svg></span> Jinsiy quvvatni oshiradi</li>
                         </ul>
-                        <div class="card-actions">
-                            <button class="btn btn-primary btn-sm" onclick="selectProduct('TRIOAKTIV')">Buyurtma
-                                berish</button>
-                            <button class="btn btn-outline btn-sm" onclick="openModal('trioaktiv')">Batafsil →</button>
-                        </div>
                     </div>
                 </div>
             </div>
-            <div class="mid-cta">
-                <div class="mid-cta-inner">
-                    <div>
-                        <h3>Qaysi mahsulot sizga mos?</h3>
-                        <p>Mutaxassisimiz <strong>bepul konsultatsiya</strong> beradi — o'zingizga mos dorini tanlang
-                        </p>
+            <!-- LASITA -->
+            <div class="product-card" id="card-lasita">
+                <div class="card-badge badge-featured" style="background:#ec4899;color:#fff"><svg width="12" height="12"
+                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path
+                            d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
+                    </svg> Ayollar uchun</div>
+                <div class="card-visual">
+                    <div class="card-visual-glow"></div>
+                    <img src="lasita.jpg" alt="LASITA" class="card-product-img" loading="lazy" width="280" height="280"
+                        onerror="this.src='alividia_organic.jpg';">
+                </div>
+                <div class="card-body">
+                    <h3>LASITA</h3>
+                    <div class="card-sub">Ginekologik kompleks · Krem, kapsula, svicha</div>
+                    <ul class="card-list">
+                        <li><span class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                    stroke="var(--g600)" stroke-width="2.5">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg></span> Ayollar salomatligini qoʻllab quvvatlaydi</li>
+                        <li><span class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                    stroke="var(--g600)" stroke-width="2.5">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg></span> Yalligʻlanish shamollashlarni ketkazadi</li>
+                        <li><span class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                    stroke="var(--g600)" stroke-width="2.5">
+                                    <polyline points="20 6 9 17 4 12" />
+                                </svg></span> Jinsiy muammolarni bartaraf etadi</li>
+                    </ul>
+                    <div class="card-actions">
+                        <button class="btn btn-primary btn-sm" onclick="selectProduct('LASITA')">Buyurtma
+                            berish</button>
+                        <button class="btn btn-outline btn-sm" onclick="openModal('lasita')">Batafsil →</button>
                     </div>
-                    <a href="#order" class="btn btn-primary">Bepul maslahat olish →</a>
                 </div>
             </div>
+        </div>
+        <div class="mid-cta">
+            <div class="mid-cta-inner">
+                <div>
+                    <h3>Qaysi mahsulot sizga mos?</h3>
+                    <p>Mutaxassisimiz <strong>bepul konsultatsiya</strong> beradi — o'zingizga mos dorini tanlang
+                    </p>
+                </div>
+                <a href="#order" class="btn btn-primary">Bepul maslahat olish →</a>
+            </div>
+        </div>
         </div>
     </section>
 
@@ -884,6 +916,7 @@
                             <option value="ABIHAYAT DAMLAMASI">ABIHAYAT DAMLAMASI</option>
                             <option value="ALIVIDA PLUS">ALIVIDA PLUS</option>
                             <option value="TRIOAKTIV">TRIOAKTIV</option>
+                            <option value="LASITA">LASITA</option>
                             <option value="KONSULTATSIYA">Bilmayman — konsultatsiya kerak</option>
                         </select>
                     </div>
@@ -920,6 +953,7 @@
                     <a href="#" onclick="openModal('abihayat');return false">ABIHAYAT DAMLAMASI</a>
                     <a href="#" onclick="openModal('alivida');return false">ALIVIDA PLUS</a>
                     <a href="#" onclick="openModal('trioaktiv');return false">TRIOAKTIV</a>
+                    <a href="#" onclick="openModal('lasita');return false">LASITA</a>
                 </div>
                 <div class="footer-col">
                     <h4>Sahifalar</h4>

@@ -487,6 +487,25 @@ const PRODUCTS = {
       }
     ],
     usage: 'Ichilishi mutaxassis tavsiyasi asosida'
+  },
+  lasita: {
+    title: 'LASITA',
+    sub: 'Krem, kapsula, svicha boʻladi',
+    img: 'lasita.jpg',
+    videos: [],
+    desc: 'LASITA — ayollar salomatligini qoʻllab-quvvatlash va ginekologik muammolarni bartaraf etish uchun maxsus ishlab chiqilgan tabiiy kompleks.',
+    sections: [
+      {
+        subtitle: 'Asosiy xususiyatlari',
+        composition: [],
+        benefits: [
+          'Ayollar salomatligini qoʻllab quvvatlaydi',
+          'Jinsiy yalligʻlanish va shamollashlarni ketkazadi',
+          'Jinsiy muammolarni bartaraf etadi'
+        ]
+      }
+    ],
+    usage: 'Qoʻllanilishi: mutaxassis tavsiya qiladi'
   }
 };
 
@@ -500,7 +519,8 @@ function openModal(key) {
   const map = {
     'abihayat': 'ABIHAYAT DAMLAMASI',
     'alivida': 'ALIVIDA PLUS',
-    'trioaktiv': 'TRIOAKTIV'
+    'trioaktiv': 'TRIOAKTIV',
+    'lasita': 'LASITA'
   };
   const pName = map[key] || '';
 
