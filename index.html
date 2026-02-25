@@ -13,13 +13,18 @@
     <meta property="og:description" content="100% organik mahsulotlar. Bepul konsultatsiya oling!">
     <meta property="og:type" content="website">
     <meta property="og:image" content="logo.jpg">
-    <link rel="icon" type="image/svg+xml" href="logo.svg">
+    <link rel="icon" type="image/jpeg" href="logo.jpg">
     <link rel="apple-touch-icon" href="logo.jpg">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap"
-        rel="stylesheet">
+    <link rel="preload" as="style"
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link
+            href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@600;700;800;900&display=swap"
+            rel="stylesheet">
+    </noscript>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link rel="stylesheet" href="styles.css">
 
@@ -92,7 +97,8 @@
         </div>
         <div class="hero-content">
             <div class="hero-logo">
-                <img src="logo.jpg" alt="ALIVIDA ORGANIC" class="hero-logo-img" width="90" height="90">
+                <img src="logo.jpg" alt="ALIVIDA ORGANIC" class="hero-logo-img" width="90" height="90"
+                    fetchpriority="high">
             </div>
             <div class="hero-badge">
                 <span class="badge-dot"></span> GMP sertifikatlangan · Turkiya sifati · <span id="live-visitors"
@@ -151,11 +157,22 @@
     <section class="section" id="products">
         <div class="container">
             <div class="section-head">
-                <span class="tag">Mahsulotlar</span>
-                <h2>O'zingizga Mos Mahsulot Tanlang</h2>
-                <p>Har bir mahsulot muayyan muammoni hal qiladi. Qaysi biri sizga kerak?</p>
+                <span class="tag">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                        stroke-width="2.5">
+                        <line x1="8" y1="6" x2="21" y2="6"></line>
+                        <line x1="8" y1="12" x2="21" y2="12"></line>
+                        <line x1="8" y1="18" x2="21" y2="18"></line>
+                        <line x1="3" y1="6" x2="3.01" y2="6"></line>
+                        <line x1="3" y1="12" x2="3.01" y2="12"></line>
+                        <line x1="3" y1="18" x2="3.01" y2="18"></line>
+                    </svg>
+                    Mahsulotlar
+                </span>
+                <h2><span class="tl">O'zingizga Mos</span> <span class="tl-green">Mahsulot Tanlang</span></h2>
+                <p>Har bir mahsulot muayyan muammoni hal qiladi. Biz bilan sog'ligingizni tabiiy yo'l bilan tiklang.</p>
             </div>
-            <div class="products-grid">
+            <div class="products-grid reveal-stagger">
                 <!-- ABIHAYAT -->
                 <div class="product-card" id="card-abihayat">
                     <div class="card-badge badge-featured"><svg width="12" height="12" viewBox="0 0 24 24"
@@ -256,63 +273,158 @@
                                         <polyline points="20 6 9 17 4 12" />
                                     </svg></span> Jinsiy quvvatni oshiradi</li>
                         </ul>
+                        <div class="card-actions">
+                            <button class="btn btn-primary btn-sm" onclick="selectProduct('TRIOAKTIV')">Buyurtma
+                                berish</button>
+                            <button class="btn btn-outline btn-sm" onclick="openModal('trioaktiv')">Batafsil →</button>
+                        </div>
+                    </div>
+                </div>
+                <!-- LASITA -->
+                <div class="product-card" id="card-lasita">
+                    <div class="card-badge badge-featured" style="background:#ec4899;color:#fff;border-color:#be185d;">
+                        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2">
+                            <path
+                                d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
+                        </svg> Ayollar uchun
+                    </div>
+                    <div class="card-visual">
+                        <div class="card-visual-glow"></div>
+                        <img src="LASITA.png" alt="LASITA" class="card-product-img" loading="lazy" width="280"
+                            height="280" onerror="this.src='alividia_organic.jpg';">
+                    </div>
+                    <div class="card-body">
+                        <h3>LASITA</h3>
+                        <div class="card-sub">Ginekologik kompleks · Krem, kapsula, svicha</div>
+                        <ul class="card-list">
+                            <li><span class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                        stroke="var(--g600)" stroke-width="2.5">
+                                        <polyline points="20 6 9 17 4 12" />
+                                    </svg></span> Ayollar salomatligini qoʻllab quvvatlaydi</li>
+                            <li><span class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                        stroke="var(--g600)" stroke-width="2.5">
+                                        <polyline points="20 6 9 17 4 12" />
+                                    </svg></span> Yalligʻlanish shamollashlarni ketkazadi</li>
+                            <li><span class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                        stroke="var(--g600)" stroke-width="2.5">
+                                        <polyline points="20 6 9 17 4 12" />
+                                    </svg></span> Jinsiy muammolarni bartaraf etadi</li>
+                        </ul>
+                        <div class="card-actions">
+                            <button class="btn btn-primary btn-sm" onclick="selectProduct('LASITA')">Buyurtma
+                                berish</button>
+                            <button class="btn btn-outline btn-sm" onclick="openModal('lasita')">Batafsil →</button>
+                        </div>
                     </div>
                 </div>
             </div>
-            <!-- LASITA -->
-            <div class="product-card" id="card-lasita">
-                <div class="card-badge badge-featured" style="background:#ec4899;color:#fff"><svg width="12" height="12"
-                        viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <path
-                            d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z" />
-                    </svg> Ayollar uchun</div>
-                <div class="card-visual">
-                    <div class="card-visual-glow"></div>
-                    <img src="LASITA.png" alt="LASITA" class="card-product-img" loading="lazy" width="280" height="280"
-                        onerror="this.src='alividia_organic.jpg';">
-                </div>
-                <div class="card-body">
-                    <h3>LASITA</h3>
-                    <div class="card-sub">Ginekologik kompleks · Krem, kapsula, svicha</div>
-                    <ul class="card-list">
-                        <li><span class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-                                    stroke="var(--g600)" stroke-width="2.5">
-                                    <polyline points="20 6 9 17 4 12" />
-                                </svg></span> Ayollar salomatligini qoʻllab quvvatlaydi</li>
-                        <li><span class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-                                    stroke="var(--g600)" stroke-width="2.5">
-                                    <polyline points="20 6 9 17 4 12" />
-                                </svg></span> Yalligʻlanish shamollashlarni ketkazadi</li>
-                        <li><span class="check"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
-                                    stroke="var(--g600)" stroke-width="2.5">
-                                    <polyline points="20 6 9 17 4 12" />
-                                </svg></span> Jinsiy muammolarni bartaraf etadi</li>
-                    </ul>
-                    <div class="card-actions">
-                        <button class="btn btn-primary btn-sm" onclick="selectProduct('LASITA')">Buyurtma
-                            berish</button>
-                        <button class="btn btn-outline btn-sm" onclick="openModal('lasita')">Batafsil →</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="mid-cta">
-            <div class="mid-cta-inner">
-                <div>
-                    <h3>Qaysi mahsulot sizga mos?</h3>
-                    <p>Mutaxassisimiz <strong>bepul konsultatsiya</strong> beradi — o'zingizga mos dorini tanlang
+
+            <!-- ═════ DO/POSLE WARNING ═════ -->
+            <div class="doposle-section reveal">
+                <div class="doposle-header">
+                    <span class="dp-tag">
+                        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                            stroke-width="2.5">
+                            <path
+                                d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z" />
+                            <line x1="12" y1="9" x2="12" y2="13" />
+                            <line x1="12" y1="17" x2="12.01" y2="17" />
+                        </svg>
+                        Ogohlantirish
+                    </span>
+                    <h3>Kasallik oldi olinmasa nima bo'ladi?</h3>
+                    <p>Quyidagi holatlar — davolanmagan kasalliklarning haqiqiy oqibatlari. Suring va farqni ko'ring.
                     </p>
                 </div>
-                <a href="#order" class="btn btn-primary">Bepul maslahat olish →</a>
+                <div class="doposle-grid reveal-stagger">
+                    <!-- Diabetes Card -->
+                    <div class="dp-card">
+                        <div class="dp-card-title">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#dc2626"
+                                stroke-width="2">
+                                <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
+                            </svg>
+                            Qandli diabet — Gangrena xavfi
+                        </div>
+                        <div class="dp-compare" data-dp-compare>
+                            <img src="posle_qandlidiabet.png" alt="Davolangandan keyin — sog'lom oyoq"
+                                class="dp-img-after" loading="lazy">
+                            <img src="do_qandlidiabet.png" alt="Davolanmagan qandli diabet — gangrena"
+                                class="dp-img-before" loading="lazy">
+                            <div class="dp-slider-line"></div>
+                            <div class="dp-slider-handle">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <polyline points="15 18 9 12 15 6" />
+                                </svg>
+                            </div>
+                            <div class="dp-labels">
+                                <span class="dp-label dp-label-after">Davolangan</span>
+                                <span class="dp-label dp-label-before">Davolanmagan</span>
+                            </div>
+                        </div>
+                        <div class="dp-card-footer">
+                            <strong>Gangrena</strong> — qandli diabetning eng og'ir asoratidir. O'z vaqtida davolanmasa
+                            oyoqni <strong>kesib tashlashga</strong> to'g'ri keladi. <span class="dp-safe">ABIHAYAT
+                                bilan
+                                qandni nazoratda saqlang.</span>
+                        </div>
+                    </div>
+
+                    <!-- Arthritis Card -->
+                    <div class="dp-card">
+                        <div class="dp-card-title">
+                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#dc2626"
+                                stroke-width="2">
+                                <circle cx="12" cy="12" r="10" />
+                                <path d="M8 12h8" />
+                            </svg>
+                            Artrit — Bo'g'im deformatsiyasi
+                        </div>
+                        <div class="dp-compare" data-dp-compare>
+                            <img src="posle_artri.png" alt="Davolangandan keyin — sog'lom qo'llar" class="dp-img-after"
+                                loading="lazy">
+                            <img src="do_artrit.png" alt="Davolanmagan artrit — bo'g'im deformatsiyasi"
+                                class="dp-img-before" loading="lazy">
+                            <div class="dp-slider-line"></div>
+                            <div class="dp-slider-handle">
+                                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2.5">
+                                    <polyline points="15 18 9 12 15 6" />
+                                </svg>
+                            </div>
+                            <div class="dp-labels">
+                                <span class="dp-label dp-label-after">Davolangan</span>
+                                <span class="dp-label dp-label-before">Davolanmagan</span>
+                            </div>
+                        </div>
+                        <div class="dp-card-footer">
+                            Artrit <strong>oldi olinmasa</strong>, bo'g'imlar qiyshayib, barmoqlar deformatsiyaga
+                            uchraydi.
+                            <span class="dp-safe">ALIVIDA PLUS bilan buning oldini oling.</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-        </div>
+
+            <div class="mid-cta">
+                <div class="mid-cta-inner">
+                    <div>
+                        <h3>Qaysi mahsulot sizga mos?</h3>
+                        <p>Mutaxassisimiz <strong>bepul konsultatsiya</strong> beradi — o'zingizga mos dorini tanlang
+                        </p>
+                    </div>
+                    <a href="#order" class="btn btn-primary">Bepul maslahat olish →</a>
+                </div>
+            </div>
         </div>
     </section>
 
     <!-- ═════ ABOUT ═════ -->
     <section class="section" id="about">
         <div class="container">
-            <div class="about-layout">
+            <div class="about-layout reveal">
                 <div class="about-text">
                     <span class="tag">Biz haqimizda</span>
                     <h2>Nima uchun minglab odam ALIVIDA tanlaydi?</h2>
@@ -392,6 +504,7 @@
                     </div> <!-- /stat-card -->
                 </div> <!-- /about-stats -->
             </div> <!-- /about-layout -->
+        </div> <!-- /container -->
     </section>
 
     <!-- ═════ CERTIFICATIONS ═════ -->
@@ -447,7 +560,7 @@
                 <h2>Qanday Ishlaydi?</h2>
                 <p>4 ta oson qadam — 15 daqiqada natijaga yo'l oching</p>
             </div>
-            <div class="steps-row">
+            <div class="steps-row reveal-stagger">
                 <div class="step-card">
                     <div class="step-n">01</div>
                     <div class="step-icon"><svg width="28" height="28" viewBox="0 0 24 24" fill="none"
@@ -774,7 +887,7 @@
                 <h2>Ko'p So'raladigan Savollar</h2>
                 <p>Javob topa olmadingizmi? Bepul konsultatsiya oling!</p>
             </div>
-            <div class="faq-list">
+            <div class="faq-list reveal">
                 <div class="faq-item"><button class="faq-q" onclick="toggleFaq(this)">Mahsulotlar xavfsizmi?<span
                             class="faq-icon">+</span></button>
                     <div class="faq-a">
@@ -885,6 +998,12 @@
                                     <line x1="22" y1="2" x2="11" y2="13" />
                                     <polygon points="22 2 15 22 11 13 2 9 22 2" />
                                 </svg> Telegram</a>
+                            <a href="https://wa.me/998971169600" target="_blank" rel="noopener"
+                                class="soc-btn soc-wa"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"
+                                    stroke="currentColor" stroke-width="2">
+                                    <path
+                                        d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z" />
+                                </svg> WhatsApp</a>
                         </div>
                     </div>
                 </div>
@@ -969,6 +1088,7 @@
                     <a href="https://www.instagram.com/alivida.organic" target="_blank" rel="noopener">Instagram ·
                         @alivida.organic</a>
                     <a href="https://t.me/alividaplus" target="_blank" rel="noopener">Telegram</a>
+                    <a href="https://wa.me/998971169600" target="_blank" rel="noopener">WhatsApp · +998 97 116 96 00</a>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -1011,6 +1131,16 @@
         </svg>
     </a>
 
+    <!-- WHATSAPP FLOAT -->
+    <a href="https://wa.me/998971169600" class="whatsapp-float" id="whatsapp-float" target="_blank" rel="noopener"
+        aria-label="WhatsApp orqali yozing: +998 97 116 96 00">
+        <svg viewBox="0 0 24 24" fill="#fff">
+            <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+        </svg>
+        <span class="wa-tooltip">WhatsApp orqali yozing</span>
+    </a>
+
     <!-- SOCIAL PROOF NOTIFICATION -->
     <div class="social-proof-notif" id="social-proof" aria-live="polite">
         <div class="spn-icon"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="var(--g600)"
@@ -1025,10 +1155,10 @@
     </div>
 
     <!-- ═════ SCRIPTS ═════ -->
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12/dist/ScrollTrigger.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
 
 </html>

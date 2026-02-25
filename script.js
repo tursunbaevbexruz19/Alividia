@@ -9,7 +9,7 @@ const TG_BOT = '8237807471:AAHTK6SMxDFK-p4MvwzLZa1pFXrSySQvZdI';
 const TG_CHATS = ['524551673', '-5185773061', '1691140865']; // Personal + Group + New Admin
 
 // ── PRELOADER ──
-window.addEventListener('load', () => {
+function hidePreloader() {
   const pre = document.getElementById('preloader');
   if (pre) {
     setTimeout(() => {
@@ -19,7 +19,13 @@ window.addEventListener('load', () => {
   } else {
     boot();
   }
-});
+}
+
+if (document.readyState === 'complete') {
+  hidePreloader();
+} else {
+  window.addEventListener('load', hidePreloader);
+}
 
 // ── MAIN BOOT ──
 function boot() {
@@ -40,6 +46,8 @@ function boot() {
     ['smooth', initSmoothAnchors],
     ['social-proof', initSocialProof],
     ['live-visitors', initLiveVisitors],
+    ['reveal', initReveal],
+    ['dopostle', initDoPostle],
   ];
   modules.forEach(([name, fn]) => {
     try { fn(); } catch (e) { console.warn(`[${name}] type error:`, e); }
@@ -234,7 +242,8 @@ function initPhoneMask(id) {
 function initFloating() {
   const floatCta = document.getElementById('float-cta');
   const btt = document.getElementById('btt');
-  const waBtn = document.getElementById('phone-float');
+  const phoneBtn = document.getElementById('phone-float');
+  const waBtn = document.getElementById('whatsapp-float');
   let ticking = false;
   window.addEventListener('scroll', () => {
     if (ticking) return;
@@ -243,6 +252,7 @@ function initFloating() {
       const show = scrollY > 500;
       if (floatCta) floatCta.classList.toggle('show', show);
       if (btt) btt.classList.toggle('show', show);
+      if (phoneBtn) phoneBtn.classList.toggle('show', show);
       if (waBtn) waBtn.classList.toggle('show', show);
       ticking = false;
     });
@@ -419,7 +429,7 @@ const PRODUCTS = {
     title: 'ABIHAYAT DAMLAMASI',
     sub: 'Karobkada 45 ta paket boʻladi',
     img: 'AbiHayat.jpg',
-    videos: ['otziv2.mp4', 'otziv3.mp4', 'otziv1.mp4'],
+    videos: ['otziv2.MP4', 'otziv3.mp4', 'otziv1.MP4'],
     desc: 'ABIHAYAT DAMLAMASI — qondagi qand miqdorini me\'yorlashtirish va qon bosimini barqarorlashtirish uchun maxsus ishlab chiqilgan tabiiy vosita.',
     sections: [
       {
@@ -844,4 +854,69 @@ function initLiveVisitors() {
   }
   update();
   setInterval(update, 12000);
+}
+
+// ══════════════════════════
+// SCROLL REVEAL ANIMATIONS
+// ══════════════════════════
+function initReveal() {
+  const els = document.querySelectorAll('.reveal, .reveal-stagger');
+  if (!els.length) return;
+  const obs = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        obs.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15, rootMargin: '0px 0px -40px 0px' });
+  els.forEach(el => obs.observe(el));
+}
+
+// ══════════════════════════
+// DO/POSLE COMPARISON SLIDER
+// ══════════════════════════
+function initDoPostle() {
+  document.querySelectorAll('[data-dp-compare]').forEach(container => {
+    const afterImg = container.querySelector('.dp-img-after');
+    const line = container.querySelector('.dp-slider-line');
+    const handle = container.querySelector('.dp-slider-handle');
+    if (!afterImg || !line || !handle) return;
+
+    let isDragging = false;
+
+    function updateSlider(clientX) {
+      const rect = container.getBoundingClientRect();
+      let x = (clientX - rect.left) / rect.width;
+      x = Math.max(0.05, Math.min(0.95, x));
+      const pct = x * 100;
+      afterImg.style.clipPath = `inset(0 ${100 - pct}% 0 0)`;
+      line.style.left = pct + '%';
+      handle.style.left = pct + '%';
+    }
+
+    // Mouse events
+    container.addEventListener('mousedown', (e) => {
+      isDragging = true;
+      updateSlider(e.clientX);
+      e.preventDefault();
+    });
+    window.addEventListener('mousemove', (e) => {
+      if (isDragging) updateSlider(e.clientX);
+    });
+    window.addEventListener('mouseup', () => { isDragging = false; });
+
+    // Touch events
+    container.addEventListener('touchstart', (e) => {
+      isDragging = true;
+      updateSlider(e.touches[0].clientX);
+    }, { passive: true });
+    container.addEventListener('touchmove', (e) => {
+      if (isDragging) {
+        updateSlider(e.touches[0].clientX);
+        e.preventDefault();
+      }
+    }, { passive: false });
+    container.addEventListener('touchend', () => { isDragging = false; });
+  });
 }
