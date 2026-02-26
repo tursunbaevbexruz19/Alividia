@@ -1595,11 +1595,16 @@ textarea {
     background: #000
 }
 
-.video-card-inner video {
+.video-card-inner video,
+.video-card-inner iframe {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block
+    display: block;
+    position: absolute;
+    inset: 0;
+    pointer-events: auto;
+    /* allows interaction with iframe */
 }
 
 .video-overlay {
