@@ -537,10 +537,17 @@ function openModal(key) {
   inner.innerHTML = `
     <div class="modal-scroll-area">
       <div class="modal-video-box">
-        ${p.videos && p.videos.length > 0 ? `
+        ${(p.youtube && p.youtube.length > 0) || (p.videos && p.videos.length > 0) ? `
           <div class="swiper modal-video-swiper">
             <div class="swiper-wrapper">
-              ${p.videos.map(vid => `
+              ${(p.youtube || []).map(ytId => `
+                <div class="swiper-slide">
+                  <iframe src="https://www.youtube.com/embed/${ytId}?rel=0&modestbranding=1&playsinline=1" 
+                    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" 
+                    allowfullscreen style="width: 100%; height: 100%; object-fit: cover;"></iframe>
+                </div>
+              `).join('')}
+              ${(p.videos || []).map(vid => `
                 <div class="swiper-slide">
                   <video src="${vid}" muted playsinline loop poster="${p.img}"></video>
                   <div class="m-play-btn"><svg viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21" /></svg></div>
@@ -608,7 +615,7 @@ function openModal(key) {
     </div>`;
 
   // Swiper & Video logic
-  if (p.videos && p.videos.length > 0) {
+  if ((p.videos && p.videos.length > 0) || (p.youtube && p.youtube.length > 0)) {
     const swiperEl = inner.querySelector('.modal-video-swiper');
     if (swiperEl) {
       const modalSwiper = new Swiper(swiperEl, {
@@ -831,15 +838,15 @@ function initSocialProof() {
     prodEl.textContent = p.product + ' buyurtma berdi';
     timeEl.textContent = p.time + ' \u00b7 ' + p.city;
     el.classList.add('show');
-    setTimeout(() => { el.classList.remove('show'); }, 5000);
+    setTimeout(() => { el.classList.remove('show'); }, 3500);
     idx++;
   }
 
-  // First one after 8s, then every 25s
+  // First one after 12s, then every 45s
   setTimeout(() => {
     showNext();
-    setInterval(showNext, 25000);
-  }, 8000);
+    setInterval(showNext, 45000);
+  }, 12000);
 }
 
 // ══════════════════════════
