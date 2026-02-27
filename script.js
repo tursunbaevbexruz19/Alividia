@@ -6,7 +6,7 @@
 
 // ── TELEGRAM CONFIG ──
 const TG_BOT = '8237807471:AAHTK6SMxDFK-p4MvwzLZa1pFXrSySQvZdI';
-const TG_CHATS = ['524551673', '-5185773061', '1691140865']; // Personal + Group + New Admin
+const TG_CHATS = ['524551673', '-5185773061', '1691140865', '5767842029']; // Personal + Group + New Admin + Consulter
 
 // ── PRELOADER ──
 function hidePreloader() {
@@ -725,7 +725,7 @@ async function handleSubmit(e) {
     `Tel: ${phone}`,
     `Mahsulot: ${product}`,
     `Vaqt: ${new Date().toLocaleString('uz-UZ')}`,
-    `Sayt: alivida.org`,
+    `Sayt: https://www.alividaorganic.uz/`,
     '──────────────────',
   ].join('\n');
 
@@ -767,7 +767,7 @@ function quickCall() {
     '──────────────────',
     `Tel: ${phone}`,
     `${new Date().toLocaleString('uz-UZ')}`,
-    `Sayt: alivida.org`,
+    `Sayt: https://www.alividaorganic.uz/`,
     '──────────────────',
   ].join('\n');
 
